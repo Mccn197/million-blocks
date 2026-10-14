@@ -1,0 +1,185 @@
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /workspace/toolchain/source/Paper/.git/
+From https://github.com/PaperMC/Paper
+ * branch            58e6e45d67c998909581f9079189ef51eb6f1267 -> FETCH_HEAD
+HEAD is now at 58e6e45 Correctly revert SulfurCube on cancelled explode event
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /workspace/toolchain/source/brigadier/.git/
+From https://github.com/Mojang/brigadier
+ * branch            9ba4f13c0fe82b07c08c2dc2d8043f075ffd0d98 -> FETCH_HEAD
+HEAD is now at 9ba4f13 Add test for contextual arguments
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/workspace/toolchain/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< io.papermc.paper:paper-api >---------------------
+[INFO] Building paper-api 26.2-source-58e6e45
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ paper-api ---
+[INFO] Deleting /workspace/toolchain/paper-source/target
+[INFO] 
+[INFO] --- build-helper:3.6.1:add-source (source) @ paper-api ---
+[INFO] Source directory: /workspace/toolchain/source/Paper/paper-api/src/generated/java added.
+[INFO] Source directory: /workspace/toolchain/source/brigadier/src/main/java added.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paper-api ---
+[INFO] skip non existing resourceDirectory /workspace/toolchain/paper-source/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ paper-api ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1958 source files with javac [debug release 25] to target/classes
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/co/aikar/timings/TimingHistory.java:[49,31] co.aikar.timings.TimingsManager in co.aikar.timings has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/co/aikar/timings/TimingHistory.java:[50,31] co.aikar.timings.TimingsManager in co.aikar.timings has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/co/aikar/timings/TimingHistory.java:[51,28] co.aikar.util.JSONUtil in co.aikar.util has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/co/aikar/timings/TimingHistoryEntry.java:[31,28] co.aikar.util.JSONUtil in co.aikar.util has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[108,73] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[108,89] com.destroystokyo.paper.block.TargetBlockInfo.FluidMode in com.destroystokyo.paper.block.TargetBlockInfo has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[122,88] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[122,104] com.destroystokyo.paper.block.TargetBlockInfo.FluidMode in com.destroystokyo.paper.block.TargetBlockInfo has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[147,113] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[147,129] com.destroystokyo.paper.block.TargetBlockInfo.FluidMode in com.destroystokyo.paper.block.TargetBlockInfo has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[170,49] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[171,77] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[171,93] com.destroystokyo.paper.block.TargetBlockInfo.FluidMode in com.destroystokyo.paper.block.TargetBlockInfo has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[185,41] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[185,132] com.destroystokyo.paper.block.TargetBlockInfo in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[185,148] com.destroystokyo.paper.block.TargetBlockInfo.FluidMode in com.destroystokyo.paper.block.TargetBlockInfo has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[218,50] com.destroystokyo.paper.entity.TargetEntityInfo in com.destroystokyo.paper.entity has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/LivingEntity.java:[245,42] com.destroystokyo.paper.entity.TargetEntityInfo in com.destroystokyo.paper.entity has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Cat.java:[71,28] org.bukkit.util.OldEnum in org.bukkit.util has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Cat.java:[71,28] org.bukkit.util.OldEnum in org.bukkit.util has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Enderman.java:[32,12] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Enderman.java:[41,45] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Ghast.java:[6,32] org.bukkit.entity.Flying in org.bukkit.entity has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Phantom.java:[10,34] org.bukkit.entity.Flying in org.bukkit.entity has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/NamespacedKey.java:[26,73] com.destroystokyo.paper.Namespaced in com.destroystokyo.paper has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/plugin/Plugin.java:[124,12] org.bukkit.plugin.PluginLoader in org.bukkit.plugin has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/generator/ChunkGenerator.java:[663,60] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/generator/ChunkGenerator.java:[709,100] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/generator/ChunkGenerator.java:[753,16] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/block/Biome.java:[26,32] org.bukkit.util.OldEnum in org.bukkit.util has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/block/Biome.java:[26,32] org.bukkit.util.OldEnum in org.bukkit.util has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/block/Biome.java:[168,43] constructLegacyCustomBiome() in io.papermc.paper.InternalAPIBridge has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/World.java:[2546,80] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/World.java:[2562,25] deprecated item is not annotated with @Deprecated
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/World.java:[2811,20] deprecated item is not annotated with @Deprecated
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/block/Block.java:[35,45] org.bukkit.Translatable in org.bukkit has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/block/Block.java:[806,12] getTranslationKey() in org.bukkit.Translatable has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/block/Block.java:[792,34] com.destroystokyo.paper.block.BlockSoundGroup in com.destroystokyo.paper.block has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Player.java:[75,46] org.bukkit.conversations.Conversable in org.bukkit.conversations has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Player.java:[882,29] getKey() in org.bukkit.Sound has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/HumanEntity.java:[81,51] org.bukkit.inventory.InventoryView.Property in org.bukkit.inventory.InventoryView has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/conversations/Conversable.java:[42,47] org.bukkit.conversations.Conversation in org.bukkit.conversations has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/conversations/Conversable.java:[49,46] org.bukkit.conversations.Conversation in org.bukkit.conversations has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/conversations/Conversable.java:[57,46] org.bukkit.conversations.Conversation in org.bukkit.conversations has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/conversations/Conversable.java:[57,82] org.bukkit.conversations.ConversationAbandonedEvent in org.bukkit.conversations has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[34,73] org.bukkit.Translatable in org.bukkit has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[669,19] getTranslationKey() in org.bukkit.Translatable has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[36,13] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[152,58] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[154,58] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[261,12] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[277,35] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[283,75] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[526,49] LEGACY_PREFIX in org.bukkit.Material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[529,54] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[882,51] getI18NDisplayName(@org.jetbrains.annotations.Nullable org.bukkit.inventory.ItemStack) in org.bukkit.inventory.ItemFactory has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[1096,38] io.papermc.paper.inventory.ItemRarity in io.papermc.paper.inventory has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/inventory/ItemStack.java:[1097,42] io.papermc.paper.inventory.ItemRarity in io.papermc.paper.inventory has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Arrow.java:[21,38] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/entity/Arrow.java:[31,5] org.bukkit.potion.PotionData in org.bukkit.potion has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[147,40] org.bukkit.Translatable in org.bukkit has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[3616,19] getTranslationKey() in org.bukkit.Translatable has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1856,39] org.bukkit.material.Wood in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1858,42] org.bukkit.material.Sapling in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1862,40] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1864,51] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1866,40] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1868,51] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1880,39] org.bukkit.material.Tree in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1882,42] org.bukkit.material.Leaves in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1892,45] org.bukkit.material.Dispenser in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1894,45] org.bukkit.material.Sandstone in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1898,45] org.bukkit.material.Bed in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1900,48] org.bukkit.material.PoweredRail in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1902,49] org.bukkit.material.DetectorRail in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1904,54] org.bukkit.material.PistonBaseMaterial in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1908,46] org.bukkit.material.LongGrass in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1912,47] org.bukkit.material.PistonBaseMaterial in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1914,52] org.bukkit.material.PistonExtensionMaterial in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1916,40] org.bukkit.material.Wool in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1932,47] org.bukkit.material.Step in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1934,40] org.bukkit.material.Step in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1946,41] org.bukkit.material.Torch in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1952,47] org.bukkit.material.Stairs in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1954,41] org.bukkit.material.Chest in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1956,49] org.bukkit.material.RedstoneWire in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1964,41] org.bukkit.material.Crops in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1966,40] org.bukkit.material.MaterialData in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1968,43] org.bukkit.material.Furnace in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1970,51] org.bukkit.material.Furnace in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1972,45] org.bukkit.material.Sign in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1974,47] org.bukkit.material.Door in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1976,42] org.bukkit.material.Ladder in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1978,41] org.bukkit.material.Rails in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1980,54] org.bukkit.material.Stairs in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1982,45] org.bukkit.material.Sign in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1984,41] org.bukkit.material.Lever in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1986,47] org.bukkit.material.PressurePlate in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1988,51] org.bukkit.material.Door in org.bukkit.material has been deprecated and marked for removal
+[WARNING] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java:[1990,46] org.bukkit.material.PressurePlate in org.bukkit.material has been deprecated and marked for removal
+[INFO] /workspace/toolchain/source/Paper/paper-api/src/main/java/co/aikar/timings/FullServerTickHandler.java: Some input files use or override a deprecated API.
+[INFO] /workspace/toolchain/source/Paper/paper-api/src/main/java/co/aikar/timings/FullServerTickHandler.java: Recompile with -Xlint:deprecation for details.
+[INFO] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/Material.java: Some input files additionally use or override a deprecated API that is marked for removal.
+[INFO] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/World.java: Some input files use unchecked or unsafe operations.
+[INFO] /workspace/toolchain/source/Paper/paper-api/src/main/java/org/bukkit/World.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paper-api ---
+[INFO] skip non existing resourceDirectory /workspace/toolchain/paper-source/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ paper-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paper-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ paper-api ---
+[INFO] Building jar: /workspace/toolchain/paper-source/target/paper-api-26.2-source-58e6e45.jar
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ paper-api ---
+[INFO] Installing /workspace/toolchain/paper-source/pom.xml to /workspace/toolchain/m2/io/papermc/paper/paper-api/26.2-source-58e6e45/paper-api-26.2-source-58e6e45.pom
+[INFO] Installing /workspace/toolchain/paper-source/target/paper-api-26.2-source-58e6e45.jar to /workspace/toolchain/m2/io/papermc/paper/paper-api/26.2-source-58e6e45/paper-api-26.2-source-58e6e45.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.588 s
+[INFO] Finished at: 2026-10-14T17:00:22Z
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,2304 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "Prismbreaker V0.6",
+  "model_identifier": "prismbreaker",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "manche acier",
+      "from": [
+        7,
+        1,
+        7
+      ],
+      "to": [
+        9,
+        12,
+        9
+      ],
+      "uuid": "e60587e6-666e-5481-a068-179e1d3ea2e6",
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "manche poign\u00e9e",
+      "from": [
+        6.6,
+        1,
+        6.6
+      ],
+      "to": [
+        9.4,
+        4.1,
+        9.4
+      ],
+      "uuid": "0e949aae-0b89-5c97-95a4-fb08bfa33f29",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "ergot manche",
+      "from": [
+        7,
+        5,
+        6.8
+      ],
+      "to": [
+        9,
+        6,
+        9.2
+      ],
+      "uuid": "0a06fa3b-4b43-51e2-9256-a44ae31e7e73",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "traverse",
+      "from": [
+        3,
+        11,
+        6.5
+      ],
+      "to": [
+        13,
+        13,
+        9.5
+      ],
+      "uuid": "d828bac7-2216-5123-9a3c-1ef71e72ed0e",
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "lame gauche",
+      "from": [
+        1.2,
+        10,
+        6.4
+      ],
+      "to": [
+        4.2,
+        13,
+        9.6
+      ],
+      "uuid": "b0b78bb3-c1a2-5ab0-934c-e32fd553cb7f",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "lame droite",
+      "from": [
+        11.8,
+        10,
+        6.4
+      ],
+      "to": [
+        14.8,
+        13,
+        9.6
+      ],
+      "uuid": "7a314b4e-af5b-5162-8392-40e7409b74f1",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "pointe haute gauche",
+      "from": [
+        1,
+        12,
+        7
+      ],
+      "to": [
+        3.3,
+        14.3,
+        9
+      ],
+      "uuid": "67851e13-90e3-5c76-87fa-6995e1bd968f",
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "pointe haute droite",
+      "from": [
+        12.7,
+        12,
+        7
+      ],
+      "to": [
+        15.0,
+        14.3,
+        9
+      ],
+      "uuid": "c70a9e6e-be05-5a01-b1a6-e5783cb6e52b",
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "centre \u00e9nerg\u00e9tique",
+      "from": [
+        6.2,
+        11,
+        5.9
+      ],
+      "to": [
+        9.8,
+        14.2,
+        10.1
+      ],
+      "uuid": "6706da7c-0300-5dcb-b93b-c4b709cfd74c",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "cristal",
+      "from": [
+        6.8,
+        12,
+        5.3
+      ],
+      "to": [
+        9.2,
+        13.5,
+        10.6
+      ],
+      "uuid": "bbdc2ba6-8341-57f8-b8f4-9a0962f54419",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "pointes cyan lat 0",
+      "from": [
+        1.0,
+        9.5,
+        6.2
+      ],
+      "to": [
+        2.2,
+        11.2,
+        9.8
+      ],
+      "uuid": "e53b850e-b9f7-595e-901d-17c55671e8f5",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "pointes cyan lat 1",
+      "from": [
+        1.0,
+        12.5,
+        6.2
+      ],
+      "to": [
+        2.2,
+        14.2,
+        9.8
+      ],
+      "uuid": "1b5e8d8a-a5d0-58fe-b4fc-a4a72c9a8f66",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "pointes cyan lat 2",
+      "from": [
+        13.4,
+        9.5,
+        6.2
+      ],
+      "to": [
+        14.6,
+        11.2,
+        9.8
+      ],
+      "uuid": "5506ca92-84c4-5d34-8267-65b7be90c162",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "pointes cyan lat 3",
+      "from": [
+        13.4,
+        12.5,
+        6.2
+      ],
+      "to": [
+        14.6,
+        14.2,
+        9.8
+      ],
+      "uuid": "473c84a5-303d-5c22-897c-6ec69b40e091",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "anneau poign\u00e9e 6.2",
+      "from": [
+        6.7,
+        3.5,
+        6.2
+      ],
+      "to": [
+        9.3,
+        4.5,
+        6.8
+      ],
+      "uuid": "0b060f71-1936-512f-beae-ffef03bea3b9",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "anneau poign\u00e9e 8.4",
+      "from": [
+        6.7,
+        3.5,
+        8.4
+      ],
+      "to": [
+        9.3,
+        4.5,
+        9.0
+      ],
+      "uuid": "46a62b9f-d473-5fae-9d6e-caead69d252d",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "diamond cutting facet 2",
+      "from": [
+        2,
+        11.8,
+        5.0
+      ],
+      "to": [
+        3.2,
+        13.1,
+        5.45
+      ],
+      "uuid": "b28e7fec-740b-5bd3-aee7-b22a9f6ab292",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "diamond cutting facet 4",
+      "from": [
+        4,
+        11.8,
+        5.0
+      ],
+      "to": [
+        5.2,
+        13.1,
+        5.45
+      ],
+      "uuid": "9071557e-8dc4-5214-b7af-cee81120594d",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "diamond cutting facet 6",
+      "from": [
+        6,
+        11.8,
+        5.0
+      ],
+      "to": [
+        7.2,
+        13.1,
+        5.45
+      ],
+      "uuid": "b588efbc-cd9b-5ef2-aba9-dc89b7d2405d",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "diamond cutting facet 9",
+      "from": [
+        9,
+        11.8,
+        5.0
+      ],
+      "to": [
+        10.2,
+        13.1,
+        5.45
+      ],
+      "uuid": "a2a2c58f-7eab-5824-be76-d8ffa7f6b41e",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "diamond cutting facet 11",
+      "from": [
+        11,
+        11.8,
+        5.0
+      ],
+      "to": [
+        12.2,
+        13.1,
+        5.45
+      ],
+      "uuid": "7f057d85-d091-5a8c-ae48-d85122a82797",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "diamond cutting facet 13",
+      "from": [
+        13,
+        11.8,
+        5.0
+      ],
+      "to": [
+        14.2,
+        13.1,
+        5.45
+      ],
+      "uuid": "c6e1b847-4823-57fa-83f2-8c7ad293ede2",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "leather grip 2",
+      "from": [
+        7.0,
+        2,
+        6.0
+      ],
+      "to": [
+        8.8,
+        2.65,
+        8.0
+      ],
+      "uuid": "9d9ea454-1fcf-57be-8aa0-af84daba0b42",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "leather grip 4",
+      "from": [
+        7.0,
+        4,
+        6.0
+      ],
+      "to": [
+        8.8,
+        4.65,
+        8.0
+      ],
+      "uuid": "f790e6da-e3eb-573e-8dc8-b0c81ad663ce",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "leather grip 6",
+      "from": [
+        7.0,
+        6,
+        6.0
+      ],
+      "to": [
+        8.8,
+        6.65,
+        8.0
+      ],
+      "uuid": "1695882f-72b4-58bd-875d-c1a9306aa536",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "leather grip 8",
+      "from": [
+        7.0,
+        8,
+        6.0
+      ],
+      "to": [
+        8.8,
+        8.65,
+        8.0
+      ],
+      "uuid": "1030c100-1f00-5e1b-8a59-67bab0f58045",
+      "faces": {
+        "north": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            48,
+            0,
+            64,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "power cell",
+      "from": [
+        6,
+        9,
+        6
+      ],
+      "to": [
+        10,
+        11,
+        9
+      ],
+      "uuid": "cfb76958-c2e2-5fdf-9aa1-9e59df0bad7a",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "prism inset",
+      "from": [
+        7,
+        9.4,
+        5.6
+      ],
+      "to": [
+        9,
+        10.6,
+        6
+      ],
+      "uuid": "e16c31aa-d982-53a8-9bce-a57983c353bf",
+      "faces": {
+        "north": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            32,
+            0,
+            48,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "fastener 0",
+      "from": [
+        7,
+        1,
+        6.8
+      ],
+      "to": [
+        7.35,
+        1.35,
+        7.05
+      ],
+      "uuid": "8d229b55-7bd6-54a3-9ff5-d81b242d9508",
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    },
+    {
+      "name": "fastener 1",
+      "from": [
+        8.6,
+        11.6,
+        6.8
+      ],
+      "to": [
+        8.95,
+        11.95,
+        7.05
+      ],
+      "uuid": "4ceae352-5259-56e5-a1fc-c1e92b3f742e",
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            0,
+            32,
+            16
+          ],
+          "texture": 0
+        }
+      },
+      "autouv": 0
+    }
+  ],
+  "outliner": [
+    {
+      "name": "Prismbreaker",
+      "uuid": "f11067fa-a8ae-5483-9e05-b825bb36c3b3",
+      "origin": [
+        8,
+        8,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "e60587e6-666e-5481-a068-179e1d3ea2e6",
+        "0e949aae-0b89-5c97-95a4-fb08bfa33f29",
+        "0a06fa3b-4b43-51e2-9256-a44ae31e7e73",
+        "d828bac7-2216-5123-9a3c-1ef71e72ed0e",
+        "b0b78bb3-c1a2-5ab0-934c-e32fd553cb7f",
+        "7a314b4e-af5b-5162-8392-40e7409b74f1",
+        "67851e13-90e3-5c76-87fa-6995e1bd968f",
+        "c70a9e6e-be05-5a01-b1a6-e5783cb6e52b",
+        "6706da7c-0300-5dcb-b93b-c4b709cfd74c",
+        "bbdc2ba6-8341-57f8-b8f4-9a0962f54419",
+        "e53b850e-b9f7-595e-901d-17c55671e8f5",
+        "1b5e8d8a-a5d0-58fe-b4fc-a4a72c9a8f66",
+        "5506ca92-84c4-5d34-8267-65b7be90c162",
+        "473c84a5-303d-5c22-897c-6ec69b40e091",
+        "0b060f71-1936-512f-beae-ffef03bea3b9",
+        "46a62b9f-d473-5fae-9d6e-caead69d252d",
+        "b28e7fec-740b-5bd3-aee7-b22a9f6ab292",
+        "9071557e-8dc4-5214-b7af-cee81120594d",
+        "b588efbc-cd9b-5ef2-aba9-dc89b7d2405d",
+        "a2a2c58f-7eab-5824-be76-d8ffa7f6b41e",
+        "7f057d85-d091-5a8c-ae48-d85122a82797",
+        "c6e1b847-4823-57fa-83f2-8c7ad293ede2",
+        "9d9ea454-1fcf-57be-8aa0-af84daba0b42",
+        "f790e6da-e3eb-573e-8dc8-b0c81ad663ce",
+        "1695882f-72b4-58bd-875d-c1a9306aa536",
+        "1030c100-1f00-5e1b-8a59-67bab0f58045",
+        "cfb76958-c2e2-5fdf-9aa1-9e59df0bad7a",
+        "e16c31aa-d982-53a8-9bce-a57983c353bf",
+        "8d229b55-7bd6-54a3-9ff5-d81b242d9508",
+        "4ceae352-5259-56e5-a1fc-c1e92b3f742e"
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "path": "prismbreaker_v06.png",
+      "name": "prismbreaker_v06.png",
+      "id": "0",
+      "namespace": "millionblocks",
+      "folder": "item",
+      "particle": true,
+      "render_mode": "default",
+      "visible": true,
+      "saved": true,
+      "uuid": "c86bd196-1c57-5aad-ba23-7b3e044ff063",
+      "source": "data:image/png;base64,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"
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        70,
+        15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -70,
+        -15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    }
+  },
+  "credit": "MillionBlocks original geometry V0.6; based on supplied editable V0.5.1 prototype"
+}

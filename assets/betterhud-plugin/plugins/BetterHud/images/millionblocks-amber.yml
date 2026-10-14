@@ -1,0 +1,24 @@
+mb_amber_panel:
+  type: single
+  file: mb_panel_amber.png
+mb_amber_pickaxe:
+  type: single
+  file: mb_pickaxe.png
+mb_amber_block:
+  type: single
+  file: mb_block.png
+mb_crack_0:
+  type: single
+  file: mb_stone_crack_0.png
+mb_crack_1:
+  type: single
+  file: mb_stone_crack_1.png
+mb_crack_2:
+  type: single
+  file: mb_stone_crack_2.png
+mb_crack_3:
+  type: single
+  file: mb_stone_crack_3.png
+mb_crack_4:
+  type: single
+  file: mb_stone_crack_4.png

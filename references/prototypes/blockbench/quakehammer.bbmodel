@@ -1,0 +1,1349 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "02 Quakehammer — Mining Hammer",
+  "model_identifier": "quakehammer",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "manche",
+      "from": [
+        7,
+        0.5,
+        7
+      ],
+      "to": [
+        9,
+        10.5,
+        9
+      ],
+      "uuid": "ff24e14f-5747-599e-b507-b9979d41db72",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "poignée",
+      "from": [
+        6.3,
+        0.8,
+        6.4
+      ],
+      "to": [
+        9.7,
+        4.1,
+        9.6
+      ],
+      "uuid": "de12f575-8564-51f4-8c1f-124867cf8b65",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "tête",
+      "from": [
+        2.1,
+        9.7,
+        5.7
+      ],
+      "to": [
+        13.9,
+        14.1,
+        10.5
+      ],
+      "uuid": "84137ac6-739c-537c-bc74-7622c651f107",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "plat gauche",
+      "from": [
+        1.2,
+        9.2,
+        5.0
+      ],
+      "to": [
+        3.9,
+        14.6,
+        11.4
+      ],
+      "uuid": "421c6e76-4bb0-5cc6-8cb3-36e549f48121",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "plat droite",
+      "from": [
+        12.1,
+        9.2,
+        5.0
+      ],
+      "to": [
+        14.8,
+        14.6,
+        11.4
+      ],
+      "uuid": "9739a716-9e07-5a51-aec5-e3e256581d45",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verin tige 0",
+      "from": [
+        5.2,
+        7.0,
+        5.6
+      ],
+      "to": [
+        6.2,
+        12.5,
+        6.6
+      ],
+      "uuid": "9eb462f4-de8c-5851-b46a-fba82494b4ef",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verin corps 0",
+      "from": [
+        4.8,
+        7.1,
+        5.2
+      ],
+      "to": [
+        6.6,
+        9.9,
+        7.0
+      ],
+      "uuid": "55e40ff4-ef96-5586-b3cc-543e6ebe2807",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verin tige 1",
+      "from": [
+        5.2,
+        7.0,
+        9.2
+      ],
+      "to": [
+        6.2,
+        12.5,
+        10.2
+      ],
+      "uuid": "922cbbd2-744a-509f-8193-8ceb61929fce",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verin corps 1",
+      "from": [
+        4.8,
+        7.1,
+        8.8
+      ],
+      "to": [
+        6.6,
+        9.9,
+        10.6
+      ],
+      "uuid": "770d9330-5a14-58f7-98de-1083a4c85be0",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "noyau ambré",
+      "from": [
+        6.8,
+        11.3,
+        5.1
+      ],
+      "to": [
+        9.2,
+        13.3,
+        10.9
+      ],
+      "uuid": "2fa9f110-7bf4-54eb-830c-75defae65c8b",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "insigne",
+      "from": [
+        7.1,
+        13.6,
+        6.6
+      ],
+      "to": [
+        8.9,
+        14.1,
+        9.6
+      ],
+      "uuid": "de1f6545-3538-5626-b778-5c6786e8a60b",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "rivet marteau 3.0",
+      "from": [
+        3.0,
+        10.9,
+        4.9
+      ],
+      "to": [
+        3.8,
+        11.8,
+        5.7
+      ],
+      "uuid": "04671ba1-9847-55eb-b87f-f6d5d28d5903",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "rivet marteau 4.6",
+      "from": [
+        4.6,
+        10.9,
+        4.9
+      ],
+      "to": [
+        5.4,
+        11.8,
+        5.7
+      ],
+      "uuid": "b3749d65-586b-5b7d-bccf-3f889764a359",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "rivet marteau 10.5",
+      "from": [
+        10.5,
+        10.9,
+        4.9
+      ],
+      "to": [
+        11.3,
+        11.8,
+        5.7
+      ],
+      "uuid": "e0efecda-9b84-5034-bf36-d3b3fe34cfc8",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "rivet marteau 12.4",
+      "from": [
+        12.4,
+        10.9,
+        4.9
+      ],
+      "to": [
+        13.2,
+        11.8,
+        5.7
+      ],
+      "uuid": "45234e7f-0a22-5397-b785-e48268593d95",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "avertissement 0",
+      "from": [
+        3,
+        13.4,
+        6.2
+      ],
+      "to": [
+        4.2,
+        14.6,
+        9.2
+      ],
+      "uuid": "8c0888c8-d54f-5eac-bc8d-786a71465ebb",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "avertissement 1",
+      "from": [
+        11.5,
+        13.4,
+        6.2
+      ],
+      "to": [
+        12.7,
+        14.6,
+        9.2
+      ],
+      "uuid": "50d0d65f-07af-515d-abfa-9abb6710e074",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "outliner": [
+    "ff24e14f-5747-599e-b507-b9979d41db72",
+    "de12f575-8564-51f4-8c1f-124867cf8b65",
+    "84137ac6-739c-537c-bc74-7622c651f107",
+    "421c6e76-4bb0-5cc6-8cb3-36e549f48121",
+    "9739a716-9e07-5a51-aec5-e3e256581d45",
+    "9eb462f4-de8c-5851-b46a-fba82494b4ef",
+    "55e40ff4-ef96-5586-b3cc-543e6ebe2807",
+    "922cbbd2-744a-509f-8193-8ceb61929fce",
+    "770d9330-5a14-58f7-98de-1083a4c85be0",
+    "2fa9f110-7bf4-54eb-830c-75defae65c8b",
+    "de1f6545-3538-5626-b778-5c6786e8a60b",
+    "04671ba1-9847-55eb-b87f-f6d5d28d5903",
+    "b3749d65-586b-5b7d-bccf-3f889764a359",
+    "e0efecda-9b84-5034-bf36-d3b3fe34cfc8",
+    "45234e7f-0a22-5397-b785-e48268593d95",
+    "8c0888c8-d54f-5eac-bc8d-786a71465ebb",
+    "50d0d65f-07af-515d-abfa-9abb6710e074"
+  ],
+  "textures": [
+    {
+      "path": "quakehammer.png",
+      "name": "quakehammer.png",
+      "id": "0",
+      "namespace": "millionblocks",
+      "particle": false,
+      "render_mode": "default",
+      "visible": true,
+      "saved": true,
+      "uuid": "255f7fb1-79b6-500f-b75b-bbbedcaa8e0b",
+      "source": "data:image/png;base64,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"
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        70,
+        15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -70,
+        -15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    }
+  }
+}

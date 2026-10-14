@@ -1,0 +1,1988 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "06 REDLINE MK-I — Mining Laser Seat",
+  "model_identifier": "redline_mk1",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "chenille 0",
+      "from": [
+        1,
+        1.8,
+        2
+      ],
+      "to": [
+        4,
+        4.6,
+        14
+      ],
+      "uuid": "e46888a6-7983-5109-bed5-42df470b2534",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "carter 0",
+      "from": [
+        1.3,
+        2.2,
+        2.5
+      ],
+      "to": [
+        3.7,
+        4.2,
+        13.5
+      ],
+      "uuid": "63272225-8f0d-58a5-a981-cb58b1379b85",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "chenille 1",
+      "from": [
+        12,
+        1.8,
+        2
+      ],
+      "to": [
+        15,
+        4.6,
+        14
+      ],
+      "uuid": "ac0f1706-e1ea-5660-ba6c-5870864d138e",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "carter 1",
+      "from": [
+        12.3,
+        2.2,
+        2.5
+      ],
+      "to": [
+        14.7,
+        4.2,
+        13.5
+      ],
+      "uuid": "f27d3129-3bf1-5b2e-84c0-2c0f62fbf359",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "plateforme",
+      "from": [
+        3.2,
+        4,
+        3
+      ],
+      "to": [
+        12.8,
+        5.2,
+        13
+      ],
+      "uuid": "ddab6e52-3cd9-5549-a9fa-78d320c4399a",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "siège",
+      "from": [
+        5.3,
+        5.5,
+        10
+      ],
+      "to": [
+        10.7,
+        8.5,
+        13.3
+      ],
+      "uuid": "501919fa-5516-569e-a347-41f1b9f86792",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "dossier",
+      "from": [
+        5.2,
+        7.5,
+        12.1
+      ],
+      "to": [
+        10.8,
+        12.2,
+        13.4
+      ],
+      "uuid": "905ebe0b-f7e0-52d8-8bd2-6fb7a3e23c51",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "canon",
+      "from": [
+        6,
+        7,
+        1
+      ],
+      "to": [
+        10,
+        10.6,
+        10
+      ],
+      "uuid": "4a5023c8-d592-5682-8f98-6ac31b0f64d0",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "collier canon",
+      "from": [
+        5.3,
+        6.5,
+        1.5
+      ],
+      "to": [
+        10.7,
+        11.5,
+        3.5
+      ],
+      "uuid": "65b04a4e-45c9-5ec2-9519-f60b6d8873c3",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "lentille rouge",
+      "from": [
+        6.5,
+        7.5,
+        0.5
+      ],
+      "to": [
+        9.5,
+        10.3,
+        1.6
+      ],
+      "uuid": "aa451396-e012-563d-bdac-46e4fb1051eb",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bobine 0",
+      "from": [
+        3.4,
+        8,
+        5.2
+      ],
+      "to": [
+        5.0,
+        10.8,
+        10.2
+      ],
+      "uuid": "84527c81-7ad0-5832-b6b7-941a0d70dc0d",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "pare-flamme",
+      "from": [
+        5.2,
+        10.9,
+        3
+      ],
+      "to": [
+        10.8,
+        12.1,
+        7.5
+      ],
+      "uuid": "49debeb0-442c-51e6-9aa2-54316b7bf2b2",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bobine 1",
+      "from": [
+        11.1,
+        8,
+        5.2
+      ],
+      "to": [
+        12.7,
+        10.8,
+        10.2
+      ],
+      "uuid": "74cd8bc6-ac21-5e85-b0ed-b2068d839f5c",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "pare-flamme",
+      "from": [
+        5.2,
+        10.9,
+        3
+      ],
+      "to": [
+        10.8,
+        12.1,
+        7.5
+      ],
+      "uuid": "d77326da-f3a6-53a3-b66d-da7aea33ef10",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 0-1.1",
+      "from": [
+        1.1,
+        1.4,
+        4
+      ],
+      "to": [
+        2.4,
+        2.1,
+        5.1
+      ],
+      "uuid": "5b445b75-884e-5cc9-882e-75f1fafb0d0b",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 0-13.8",
+      "from": [
+        13.8,
+        1.4,
+        4
+      ],
+      "to": [
+        15.1,
+        2.1,
+        5.1
+      ],
+      "uuid": "b9759086-335b-595c-9ce0-457c6221d415",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 1-1.1",
+      "from": [
+        1.1,
+        1.4,
+        6.5
+      ],
+      "to": [
+        2.4,
+        2.1,
+        7.6
+      ],
+      "uuid": "cf426535-de2f-53fe-b6f7-db9b30b78408",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 1-13.8",
+      "from": [
+        13.8,
+        1.4,
+        6.5
+      ],
+      "to": [
+        15.1,
+        2.1,
+        7.6
+      ],
+      "uuid": "ba50b0a0-2823-5835-b523-df82866f4763",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 2-1.1",
+      "from": [
+        1.1,
+        1.4,
+        9
+      ],
+      "to": [
+        2.4,
+        2.1,
+        10.1
+      ],
+      "uuid": "d0f8f807-0427-537a-9e6e-6233770daac8",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 2-13.8",
+      "from": [
+        13.8,
+        1.4,
+        9
+      ],
+      "to": [
+        15.1,
+        2.1,
+        10.1
+      ],
+      "uuid": "bf355f41-23f3-5e98-94f0-d7528f860252",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 3-1.1",
+      "from": [
+        1.1,
+        1.4,
+        11.5
+      ],
+      "to": [
+        2.4,
+        2.1,
+        12.6
+      ],
+      "uuid": "e1305fee-dbbb-588f-9180-73f61830c2d8",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "patin chenille 3-13.8",
+      "from": [
+        13.8,
+        1.4,
+        11.5
+      ],
+      "to": [
+        15.1,
+        2.1,
+        12.6
+      ],
+      "uuid": "716ce7d1-308e-59ab-bbd4-a83db36e2786",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "réacteur rouge 0",
+      "from": [
+        5.6,
+        11,
+        4.3
+      ],
+      "to": [
+        6.3,
+        12.0,
+        5.4
+      ],
+      "uuid": "09662e56-df4f-5b3b-8167-9fac28b77cd4",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "réacteur rouge 1",
+      "from": [
+        5.6,
+        11,
+        7.8
+      ],
+      "to": [
+        6.3,
+        12.0,
+        8.9
+      ],
+      "uuid": "8d1c8512-2ebd-5b25-9bf9-4ecfb6d83e4f",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "réacteur rouge 2",
+      "from": [
+        5.6,
+        11,
+        10.9
+      ],
+      "to": [
+        6.3,
+        12.0,
+        12.0
+      ],
+      "uuid": "467953ad-287b-5958-bbeb-718f5daa04d6",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "barre de pilotage",
+      "from": [
+        5.5,
+        8.1,
+        10.4
+      ],
+      "to": [
+        10.5,
+        9.1,
+        11.5
+      ],
+      "uuid": "2fe529d0-b84b-55eb-9a87-e6478e5aef66",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "outliner": [
+    "e46888a6-7983-5109-bed5-42df470b2534",
+    "63272225-8f0d-58a5-a981-cb58b1379b85",
+    "ac0f1706-e1ea-5660-ba6c-5870864d138e",
+    "f27d3129-3bf1-5b2e-84c0-2c0f62fbf359",
+    "ddab6e52-3cd9-5549-a9fa-78d320c4399a",
+    "501919fa-5516-569e-a347-41f1b9f86792",
+    "905ebe0b-f7e0-52d8-8bd2-6fb7a3e23c51",
+    "4a5023c8-d592-5682-8f98-6ac31b0f64d0",
+    "65b04a4e-45c9-5ec2-9519-f60b6d8873c3",
+    "aa451396-e012-563d-bdac-46e4fb1051eb",
+    "84527c81-7ad0-5832-b6b7-941a0d70dc0d",
+    "49debeb0-442c-51e6-9aa2-54316b7bf2b2",
+    "74cd8bc6-ac21-5e85-b0ed-b2068d839f5c",
+    "d77326da-f3a6-53a3-b66d-da7aea33ef10",
+    "5b445b75-884e-5cc9-882e-75f1fafb0d0b",
+    "b9759086-335b-595c-9ce0-457c6221d415",
+    "cf426535-de2f-53fe-b6f7-db9b30b78408",
+    "ba50b0a0-2823-5835-b523-df82866f4763",
+    "d0f8f807-0427-537a-9e6e-6233770daac8",
+    "bf355f41-23f3-5e98-94f0-d7528f860252",
+    "e1305fee-dbbb-588f-9180-73f61830c2d8",
+    "716ce7d1-308e-59ab-bbd4-a83db36e2786",
+    "09662e56-df4f-5b3b-8167-9fac28b77cd4",
+    "8d1c8512-2ebd-5b25-9bf9-4ecfb6d83e4f",
+    "467953ad-287b-5958-bbeb-718f5daa04d6",
+    "2fe529d0-b84b-55eb-9a87-e6478e5aef66"
+  ],
+  "textures": [
+    {
+      "path": "redline_mk1.png",
+      "name": "redline_mk1.png",
+      "id": "0",
+      "namespace": "millionblocks",
+      "particle": false,
+      "render_mode": "default",
+      "visible": true,
+      "saved": true,
+      "uuid": "0f33d0e5-3e0f-5dbe-9618-3e77b3d98eb5",
+      "source": "data:image/png;base64,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"
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        70,
+        15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -70,
+        -15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    }
+  }
+}

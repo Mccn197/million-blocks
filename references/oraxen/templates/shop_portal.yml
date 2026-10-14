@@ -1,0 +1,6 @@
+# Concept mapping for Oraxen (NOT deployed; adapt to installed Oraxen version)
+# Tool key: shop_portal
+# Placeholder model path: assets/millionblocks/models/item/shop_portal.json
+# Suggested vanilla base item: ENDER_EYE
+# Attach the exact model through Oraxen's current `pack` / `model` configuration.
+# MillionBlocks must bridge Oraxen item IDs to gameplay ToolId before use.

@@ -1,0 +1,1065 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "07 Starfall Beacon — Meteor Strike",
+  "model_identifier": "starfall_beacon",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "tige",
+      "from": [
+        7,
+        1,
+        7
+      ],
+      "to": [
+        9,
+        9.6,
+        9
+      ],
+      "uuid": "6a5695dd-4a9c-5ac5-8dfb-554c010b5a9d",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "grip",
+      "from": [
+        6.5,
+        0.9,
+        6.5
+      ],
+      "to": [
+        9.5,
+        4.4,
+        9.5
+      ],
+      "uuid": "8da2a897-0a52-5241-afef-11d71cb0868a",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "étoile",
+      "from": [
+        6,
+        8.7,
+        6
+      ],
+      "to": [
+        10,
+        12.7,
+        10
+      ],
+      "uuid": "1a780bd1-c796-500a-9cf2-9492c4d27d63",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "cage lat 0",
+      "from": [
+        2.9,
+        10,
+        5.3
+      ],
+      "to": [
+        4.2,
+        11.5,
+        10.7
+      ],
+      "uuid": "610225fb-3c2f-5838-bd7c-946a1845d905",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "cage lat 1",
+      "from": [
+        11.9,
+        10,
+        5.3
+      ],
+      "to": [
+        13.2,
+        11.5,
+        10.7
+      ],
+      "uuid": "b6eec191-2419-55aa-85ad-d384d28eaee7",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "cage lat 2",
+      "from": [
+        4.2,
+        7.9,
+        5.3
+      ],
+      "to": [
+        11.8,
+        9.4,
+        10.7
+      ],
+      "uuid": "22d20540-9416-58a7-903a-2ffba2d2363e",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "cage lat 3",
+      "from": [
+        4.2,
+        13.9,
+        5.3
+      ],
+      "to": [
+        11.8,
+        15.4,
+        10.7
+      ],
+      "uuid": "71f3a6a5-b3fe-5346-b13d-e754ac1006cf",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "couronne",
+      "from": [
+        5.2,
+        13.9,
+        5.2
+      ],
+      "to": [
+        10.8,
+        15.0,
+        10.8
+      ],
+      "uuid": "e6e86988-a654-52d7-8b87-b42920846067",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "focus",
+      "from": [
+        6.8,
+        11.7,
+        5.2
+      ],
+      "to": [
+        9.2,
+        13.4,
+        10.8
+      ],
+      "uuid": "7f9d8f5a-329a-5e81-9f98-7e1661f9e6f0",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "fragment météore 0",
+      "from": [
+        3,
+        10.2,
+        5.1
+      ],
+      "to": [
+        3.7,
+        12.4,
+        7.2
+      ],
+      "uuid": "73dd83ef-0ee6-5ffc-a80f-c44035939033",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "fragment météore 1",
+      "from": [
+        5,
+        10.2,
+        5.1
+      ],
+      "to": [
+        5.7,
+        12.4,
+        7.2
+      ],
+      "uuid": "b794c3b6-c090-5e86-aa8e-895c99f30890",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "fragment météore 2",
+      "from": [
+        9.8,
+        10.2,
+        5.1
+      ],
+      "to": [
+        10.5,
+        12.4,
+        7.2
+      ],
+      "uuid": "cf53097f-94f5-5a29-953a-e4c0c5d8a913",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "fragment météore 3",
+      "from": [
+        12,
+        10.2,
+        5.1
+      ],
+      "to": [
+        12.7,
+        12.4,
+        7.2
+      ],
+      "uuid": "1527ed7c-9771-5718-a858-c94b4b108e09",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "outliner": [
+    "6a5695dd-4a9c-5ac5-8dfb-554c010b5a9d",
+    "8da2a897-0a52-5241-afef-11d71cb0868a",
+    "1a780bd1-c796-500a-9cf2-9492c4d27d63",
+    "610225fb-3c2f-5838-bd7c-946a1845d905",
+    "b6eec191-2419-55aa-85ad-d384d28eaee7",
+    "22d20540-9416-58a7-903a-2ffba2d2363e",
+    "71f3a6a5-b3fe-5346-b13d-e754ac1006cf",
+    "e6e86988-a654-52d7-8b87-b42920846067",
+    "7f9d8f5a-329a-5e81-9f98-7e1661f9e6f0",
+    "73dd83ef-0ee6-5ffc-a80f-c44035939033",
+    "b794c3b6-c090-5e86-aa8e-895c99f30890",
+    "cf53097f-94f5-5a29-953a-e4c0c5d8a913",
+    "1527ed7c-9771-5718-a858-c94b4b108e09"
+  ],
+  "textures": [
+    {
+      "path": "starfall_beacon.png",
+      "name": "starfall_beacon.png",
+      "id": "0",
+      "namespace": "millionblocks",
+      "particle": false,
+      "render_mode": "default",
+      "visible": true,
+      "saved": true,
+      "uuid": "750c1f42-2b87-5088-b827-e5c1e6e7687a",
+      "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAIG0lEQVR4nMVaz4/bRBT+1nacdZJ13GzZ7oJUJFQJiQNCXLgggRDiggR/ARcuCPEHIC4I8S9wRwhEERxAIFrRClj1gEQlJH51KQUJCtttstslmzhpvOvYCQfvOOPxzHg8ycJ3iePM2H7fe+97byZeeuiRx6emaUIHB/sdPP3s87Dtqtb8G7/8iBdffgm1el1r/ublL/DJhcswDL3nH/X2YQFAMBpqXYBgf6891/ytn36A49S0548PR9pzDe2ZHNjV5cIxQZB/WNb4Wr0BAPD7vYU8lwxcAgzT0rpYeHTIPU8To+Lp0d0kIt2mp/UcZcAlYBJH8kklCSLEqETIfw2tFCgiSARRhBCohLx3qlXqnpM4zp2Lo3F6nCNA5F3LskvdGADGYVhqvNv00vwXoXfQLXVNwzSxZJgwrEp6zqSOcwSIvBtF5Yxxag1U7IS0MkSQ/F8kppMYE8rrNBZaBWjQpZUQ4dQS77JaUDasF4kMAST8Sbhblp1JiVgz9wkIKawWFIU1SQteCRWBDnnpuPTAtNLwj6IQlmUjisJMSpgS9ec9XFkNEIGkRZlmSRTyLFICxmHWK6Kcj8b88+zD0RpQBJa8Mp5WRcwQQqpDSoBpWkr13aooGsW01yT/eciRN0dbLEJlOXtN43j9YwAzrworgMDrZTDvemNekJRgtcEAir2q6nUe/u/ub4laKcbROKcN1sG+/krONC3cuPaD9nx7eRlfX7qoPb/eWMHoYL/UnIiqQIZpYml6/dEpVvTW0199tI9zk7NYWdZbPH3wbRvfv7cF3fj69eMLuBlYMBy9/QR/82KyHzD4uVh12/+MsbHKr60/bg/S4zXXxp4fYngYoXFMDDknwp2bncz30Pdhuy53bLDbgXNmPXPu6I8b6XHs92C6Xub32O/BPvsA4l6+3zCAxLgiiIxnQQzlGf/PUE1MRcYDyBnPwnQ9xH4v/U4I4RkPHBMgM06FHCAxlAfa86uN4mC3BW2x6DwPdASw0cCicC0gIqd/N7vMlIV4GYSCtlh0ngfjuHWmI0E4tmgAayhBs64nnASq6UAj2O0UDwIwOW6di7wPKBCgamjTmVWC4WHEPaahkg4s6Pyv3SvXAlWkBIg8rYp+MDO0QZVFcizzuGp+h76fHo9uq0UDwUSwvkgJmDekiyDzuCi/WWJk1aEIhmB9kRKwck8lp/i8CrDiiokilYBOB1Xw8ruM8BEY1JaayOuZ8eRgcCff6PAqwMAXp8qeH6LpWJl0UAWvvnNJodKAhwm1pSbyOo1MBMi8q9IPrLk2+kEkFL6yoEkhhsvSIPZ7mQhQgQEkAji4M5Z6V6UTZLvAMihSdZX8N10P0f6edAxLkAGcvACqoKyqszC9RDB5YU9rwYTZdT6xXWEWola5DIgmsDpgei1hrw/ItWDpwzfOTnUfaNU1cfUbvaUwADSdCs4/+ar2/OqpVfz0+SXt+Ua9gaXpM49NUdFLgUvbe2j3q3A0/5+/Muzi/utPwdGMjqvv/oZtswXLUVupsmhfuZnsB3T7d7UuQHAQj9Gb4z+D65dvoXFaf+ss2B0iGo1he8sIe8zudjCWErQQDVAx3mN2nOnv8xgPgGt8FCRluyg6pAT0o6QsdsLkYi1LHuqeaeUMJWBJ0o2YoyG/HyHGywy3vTzRQgL6UYzmscHrdnKxbiRfMPXiCL04QjDhj/Pn/GsNAKoNuUdlHmfTA+AQQLzcLPA2DdZgkSi6ii9WOJ5cFIt+F0EpAmReblUr6EdxLhV0qwCLlXUHABD0Zktn2lje72UwCeM0RQhKiWD3aIymZUpJmifMB50AR8MxhvuzUKWNHXQC5WuF/lHuXDSaVQSrlnwaQLG48SCaoxrmIlQblbmrAgDYbvbdRZaQaHT8VxlQLG486Mw5SbChzYIlhEDbXaQ0qiCYxAvTCR5IOOuAqwEqKUFKowpUjNdVdmAWziogqUA+uQTwwlvm8ZqRvYyOEOoqe1mQVCCfylVA5vHRZJJ2gH4c4aytJ2KiLu8kobUWaFXzZJDWdr1iZ9rcMtFw+pz+ri8PvMaHhXX+1q72DVYtC5uD4p3bHcH5umni6ju/ad/f8Wy0N//Unm/VbSy9/crh1NF83//K1vv4/fZ3sEw9AdvpXsPPf78BYEVr/teffYKnnntNay4AXPry06QM/rl3TfsiAOAHxVFkmVVE8VHmO8FwZ2uu+3f9be25GQ3wR/IdVRWEEf/PCNp43ncAaLTkkdD31TduOu2ZU1qu+K+3DAFubU35BiLYVn4Dkva27NywO5Aa2XSTV2GKiAKAhx58FP1+snna9SUbpoVXWgB43uadA2ZGyjDsDgrHdP0dNJvFVSVHgFfbSI/90V7ptOB5lkUUZ5ue9m7eQ2XCnQfi/SLkCOiNZq/NubU15bQghos8mx1rZ4jaOJPkaHu3m5JRFAmyNOj3/Yz3lTVgHkTxEWwr/9BsRJAxPKI2zrRSMkQgBP1+/S/hGDb0S2lAEBbnlwhhlA1btvTxxpQFIYgmilb8sjCArNGOrdeUsIjikOtlXpTw0LjvtPK91jfOpMct9z7hOF4qGICe0bRY8iDqDnkRwBPB4U7+FVgVYez6O0ISeKmgpAE8Y2mxnBdFeU+gUiKBhARVKBGwSGMBtVLJiwpg/vLIQkhAkRguom2mwRomigpZFMjKnQjcKlCrelJd8Gob0v6AeFh1XQCohzcgFsiu30WnvSvUAF61WHrhibe03w+oV09h89rbutNRMZfx+psPa89fbbnoBPovTK6utvAvwgJNPIpjSyQAAAAASUVORK5CYII="
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        70,
+        15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -70,
+        -15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    }
+  }
+}

@@ -1,0 +1,192 @@
+challenge:
+  target-blocks: 1000000
+  count-natural-breaks: true
+  count-explosion-breaks: true
+  auto-give-shop-item: false
+  shop-item-slot: 8
+
+locations:
+  shop:
+    enabled: false
+    world: world
+    x: 0.5
+    y: 80.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+  reward-room:
+    enabled: true
+    world: mining_spawn
+    x: 0.5
+    y: 82.0
+    z: 45.5
+    yaw: 180.0
+    pitch: 0.0
+
+victory:
+  title: "<gold><bold>1,000,000 BLOCKS MINED!</bold></gold>"
+  subtitle: "<yellow>Challenge complete</yellow>"
+  teleport-delay-ticks: 60
+
+shop:
+  title: "<dark_gray>Block Destroyer Shop</dark_gray>"
+  # Progress is a permanent score; purchasing does not reduce it.
+  consume-progress: false
+
+items:
+  super_pickaxe:
+    unlock-at: 1000
+    material: DIAMOND_PICKAXE
+    name: "<aqua><bold>Super Pickaxe</bold></aqua>"
+    lore: ["<gray>Breaks a 3x3 area.</gray>"]
+  mining_hammer:
+    unlock-at: 5000
+    material: IRON_PICKAXE
+    name: "<yellow><bold>Mining Hammer</bold></yellow>"
+    lore: ["<gray>Breaks a 5x5 area.</gray>"]
+  creeper_miner:
+    unlock-at: 25000
+    material: CREEPER_SPAWN_EGG
+    name: "<green><bold>Creeper Miner</bold></green>"
+    lore: ["<gray>Deploys a primed mining creeper.</gray>"]
+  tnt_launcher:
+    unlock-at: 75000
+    material: TNT
+    name: "<red><bold>TNT Launcher</bold></red>"
+    lore: ["<gray>Launches explosive TNT.</gray>"]
+  drill:
+    unlock-at: 175000
+    material: NETHERITE_PICKAXE
+    name: "<gold><bold>Mining Drill</bold></gold>"
+    lore: ["<gray>Drills a moving tunnel.</gray>"]
+  laser:
+    unlock-at: 325000
+    material: BLAZE_ROD
+    name: "<light_purple><bold>Mining Laser</bold></light_purple>"
+    lore: ["<gray>Burns a long tunnel instantly.</gray>"]
+  meteor:
+    unlock-at: 550000
+    material: FIRE_CHARGE
+    name: "<dark_red><bold>Meteor Strike</bold></dark_red>"
+    lore: ["<gray>Calls down a massive strike.</gray>"]
+  world_eater:
+    unlock-at: 800000
+    material: NETHER_STAR
+    name: "<dark_purple><bold>World Eater</bold></dark_purple>"
+    lore: ["<gray>End-game mass destruction.</gray>"]
+
+cinematics:
+  debris:
+    enabled: true
+    max-per-explosion: 24
+    lifetime-ticks: 30
+    velocity-horizontal: 0.55
+    velocity-vertical: 0.65
+
+arena:
+  enabled: false
+  world: world
+  min: { x: -20, y: 40, z: -20 }
+  max: { x: 20, y: 75, z: 20 }
+  reset-material: STONE
+  # Safety cap for accidental giant synchronous resets during development.
+  max-reset-blocks: 250000
+
+world-system:
+  enabled: true
+  portal-item:
+    material: ENDER_EYE
+    name: "<aqua><bold>World Portal</bold></aqua>"
+    slot: 7
+  mining-spawn:
+    name: mining_spawn
+    seed: 1337
+    auto-build: false
+    protected: true
+    void-world: false
+    spawn:
+      x: 0.5
+      y: 81.0
+      z: 6.5
+      yaw: 180.0
+      pitch: 0.0
+  survival-original-name: survival
+  survival-next:
+    name: survival_v2
+    seed: 5133991228066333
+  survival:
+    name: survival
+    # Java 26.2: village at ~0,109,0 and sulfur cave around -50,51,0.
+    seed: 42203442493
+
+hud:
+  enabled: true
+  mode: betterhud
+  custom-fallback-bossbar: true
+  use-resource-pack-glyphs: false
+  multiplier: 1
+  show-goal: true
+  show-percent: true
+  show-multiplier: true
+  show-icon: true
+  title: "§6⛏ §e{current} §7/ §f{target} blocs §8• §b{percent}%"
+  color: YELLOW
+  style: SEGMENTED_10
+  update-interval-ticks: 2
+
+showcase:
+  click-to-claim: true
+  glowing: true
+  view-range: 48.0
+  item-height: 1.30
+  text-height: 2.35
+  defaults:
+    line-spacing: 3.0
+    circle-radius: 6.0
+  spin:
+    enabled: true
+    interval-ticks: 2
+    degrees-per-step: 4.0
+
+# V0.4 - these settings apply even on previously installed 0.3 configs via defaults.
+portal:
+  # Requires the MillionBlocks resource pack; false uses industrial vanilla BlockDisplays.
+  use-custom-model: true
+  auto-give-item: true
+  max-active: -1
+hub:
+  sky-world-name: mining_sky
+  blocks-per-tick: 1200
+  import:
+    center-x: 0
+    center-z: 0
+    base-y: 130
+
+# V0.5 - cinematic remote weapons. Tune here without rebuilding the plugin.
+weapons:
+  laser:
+    range: 145
+    width: 5
+    tick-interval: 2
+    max-blocks-per-pulse: 350
+  tnt:
+    fuse-ticks: 55
+    velocity: 2.8
+  creeper:
+    range: 65
+    radius: 5
+    blocks-per-tick: 800
+  drill:
+    range: 45
+  meteor:
+    range: 130
+    radius: 14
+    charge-ticks: 35
+    max-blocks: 20000
+  world-eater:
+    range: 155
+    radius: 34
+    charge-ticks: 60
+    max-blocks: 200000
+  mass-blocks-per-tick: 1200
+  max-concurrent-mass-jobs: 2

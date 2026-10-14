@@ -1,0 +1,17 @@
+mb_amber:
+  default: false
+  tick: 1
+  conditions:
+    '1':
+      first: millionblocks_visible
+      second: 'true'
+      operation: ==
+  layouts:
+    '1':
+      name: mb_amber_layout
+      gui:
+        x: 0
+        y: 0
+      pixel:
+        x: 20
+        y: 80

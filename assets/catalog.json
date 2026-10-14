@@ -1,0 +1,65 @@
+[
+  {
+    "id": "prismbreaker",
+    "title": "Prismbreaker",
+    "cubes": 30,
+    "accent": "#36e8e6",
+    "texture": "prismbreaker_v06.png"
+  },
+  {
+    "id": "quakehammer",
+    "title": "Quakehammer",
+    "cubes": 28,
+    "accent": "#ffbd35",
+    "texture": "quakehammer_v06.png"
+  },
+  {
+    "id": "detonation_buddy",
+    "title": "Detonation Buddy",
+    "cubes": 31,
+    "accent": "#66ee42",
+    "texture": "detonation_buddy_v06.png"
+  },
+  {
+    "id": "blastcaster",
+    "title": "Blastcaster",
+    "cubes": 37,
+    "accent": "#ff543c",
+    "texture": "blastcaster_v06.png"
+  },
+  {
+    "id": "bore_x",
+    "title": "Bore-X",
+    "cubes": 33,
+    "accent": "#ffc23b",
+    "texture": "bore_x_v06.png"
+  },
+  {
+    "id": "redline_mk1",
+    "title": "REDLINE MK-I",
+    "cubes": 47,
+    "accent": "#ff323c",
+    "texture": "redline_mk1_v06.png"
+  },
+  {
+    "id": "starfall_beacon",
+    "title": "Starfall Beacon",
+    "cubes": 28,
+    "accent": "#59c9ff",
+    "texture": "starfall_beacon_v06.png"
+  },
+  {
+    "id": "void_engine",
+    "title": "VOID ENGINE",
+    "cubes": 36,
+    "accent": "#a958ff",
+    "texture": "void_engine_v06.png"
+  },
+  {
+    "id": "shop_portal",
+    "title": "Industrial KEEP OUT / DANGER",
+    "cubes": 33,
+    "accent": "#60ff56",
+    "texture": "shop_portal_v06.png"
+  }
+]

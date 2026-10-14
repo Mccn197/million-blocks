@@ -1,0 +1,1420 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "09 KEEP OUT — Industrial Shop Portal",
+  "model_identifier": "shop_portal",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "pilier 0",
+      "from": [
+        1,
+        0,
+        3.2
+      ],
+      "to": [
+        3.8,
+        14.2,
+        6.7
+      ],
+      "uuid": "050f9405-7564-5f51-b8fd-78c170bf4aad",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "socle 0",
+      "from": [
+        0.5,
+        0,
+        2.6
+      ],
+      "to": [
+        4.3,
+        2,
+        7.3
+      ],
+      "uuid": "1e58b19a-4519-5210-b6a7-9b648b85431f",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "pilier 1",
+      "from": [
+        12.2,
+        0,
+        3.2
+      ],
+      "to": [
+        15.0,
+        14.2,
+        6.7
+      ],
+      "uuid": "827fff06-bc78-5d26-942b-ef578f4d59c3",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "socle 1",
+      "from": [
+        11.7,
+        0,
+        2.6
+      ],
+      "to": [
+        15.5,
+        2,
+        7.3
+      ],
+      "uuid": "be445547-14f5-517c-8684-6075e4bf4bca",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "fronton",
+      "from": [
+        1,
+        13,
+        2.8
+      ],
+      "to": [
+        15,
+        15.6,
+        6.9
+      ],
+      "uuid": "30e77307-a79f-530a-8f6b-f00e38620156",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "panneau noir",
+      "from": [
+        3.1,
+        13.5,
+        2.3
+      ],
+      "to": [
+        12.8,
+        14.9,
+        3.5
+      ],
+      "uuid": "86b3c207-0018-5494-b7ea-abf8d478c35c",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "membrane verte",
+      "from": [
+        3.6,
+        2.3,
+        4.4
+      ],
+      "to": [
+        12.4,
+        12.8,
+        5.35
+      ],
+      "uuid": "dfb8c950-20a8-5235-a09e-bdbf06bdb103",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            8,
+            12,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            8,
+            12,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            8,
+            12,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            8,
+            12,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            8,
+            12,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            8,
+            12,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "membrane reflet",
+      "from": [
+        5,
+        3.5,
+        4.2
+      ],
+      "to": [
+        7,
+        10.5,
+        4.9
+      ],
+      "uuid": "2a90708a-1d67-50d7-ba36-224604d57b84",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            4,
+            12,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            4,
+            12,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            4,
+            12,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            4,
+            12,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            4,
+            12,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            4,
+            12,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "liseré danger",
+      "from": [
+        2.9,
+        3.5,
+        2.6
+      ],
+      "to": [
+        3.8,
+        11.6,
+        3.6
+      ],
+      "uuid": "ef49cd45-c480-54c8-a1cf-9937a45d110d",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bande danger 0",
+      "from": [
+        3.1,
+        13.85,
+        2.1
+      ],
+      "to": [
+        4.0,
+        14.5,
+        2.45
+      ],
+      "uuid": "177fbd02-f4bc-520f-bb3c-9301d1352c04",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bande danger 1",
+      "from": [
+        4.9,
+        13.85,
+        2.1
+      ],
+      "to": [
+        5.8,
+        14.5,
+        2.45
+      ],
+      "uuid": "e2691af6-8cb1-5da9-a687-a48b6ab211c9",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bande danger 2",
+      "from": [
+        6.7,
+        13.85,
+        2.1
+      ],
+      "to": [
+        7.6,
+        14.5,
+        2.45
+      ],
+      "uuid": "1e89a586-a1c8-54d7-85a5-0042985dab9f",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bande danger 3",
+      "from": [
+        8.5,
+        13.85,
+        2.1
+      ],
+      "to": [
+        9.4,
+        14.5,
+        2.45
+      ],
+      "uuid": "de170688-70e1-5282-9627-34ce9f81d29b",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bande danger 4",
+      "from": [
+        10.3,
+        13.85,
+        2.1
+      ],
+      "to": [
+        11.2,
+        14.5,
+        2.45
+      ],
+      "uuid": "5d9d34ab-77f0-5d44-838b-cce6327c7c81",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "lampe portail 0",
+      "from": [
+        1.8,
+        10,
+        2.9
+      ],
+      "to": [
+        2.75,
+        11.1,
+        3.7
+      ],
+      "uuid": "6189cf00-0a44-50f6-b37c-c203a621ffeb",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "ancrage portail 0",
+      "from": [
+        1.8,
+        1.6,
+        2.7
+      ],
+      "to": [
+        2.7,
+        2.5,
+        3.5
+      ],
+      "uuid": "14e90c52-2680-5d2e-a712-0cf0a8f09261",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "lampe portail 1",
+      "from": [
+        13.1,
+        10,
+        2.9
+      ],
+      "to": [
+        14.05,
+        11.1,
+        3.7
+      ],
+      "uuid": "1840bfc0-023b-5a48-ba7c-89da5fc8469d",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "ancrage portail 1",
+      "from": [
+        13.1,
+        1.6,
+        2.7
+      ],
+      "to": [
+        14.0,
+        2.5,
+        3.5
+      ],
+      "uuid": "5d28c570-0483-5f92-84e9-5271524c6452",
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "outliner": [
+    "050f9405-7564-5f51-b8fd-78c170bf4aad",
+    "1e58b19a-4519-5210-b6a7-9b648b85431f",
+    "827fff06-bc78-5d26-942b-ef578f4d59c3",
+    "be445547-14f5-517c-8684-6075e4bf4bca",
+    "30e77307-a79f-530a-8f6b-f00e38620156",
+    "86b3c207-0018-5494-b7ea-abf8d478c35c",
+    "dfb8c950-20a8-5235-a09e-bdbf06bdb103",
+    "2a90708a-1d67-50d7-ba36-224604d57b84",
+    "ef49cd45-c480-54c8-a1cf-9937a45d110d",
+    "177fbd02-f4bc-520f-bb3c-9301d1352c04",
+    "e2691af6-8cb1-5da9-a687-a48b6ab211c9",
+    "1e89a586-a1c8-54d7-85a5-0042985dab9f",
+    "de170688-70e1-5282-9627-34ce9f81d29b",
+    "5d9d34ab-77f0-5d44-838b-cce6327c7c81",
+    "6189cf00-0a44-50f6-b37c-c203a621ffeb",
+    "14e90c52-2680-5d2e-a712-0cf0a8f09261",
+    "1840bfc0-023b-5a48-ba7c-89da5fc8469d",
+    "5d28c570-0483-5f92-84e9-5271524c6452"
+  ],
+  "textures": [
+    {
+      "path": "shop_portal.png",
+      "name": "shop_portal.png",
+      "id": "0",
+      "namespace": "millionblocks",
+      "particle": false,
+      "render_mode": "default",
+      "visible": true,
+      "saved": true,
+      "uuid": "ac32e81e-fb07-54c1-807b-81cd02467213",
+      "source": "data:image/png;base64,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"
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        70,
+        15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -70,
+        -15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    }
+  }
+}

@@ -79,6 +79,7 @@ public final class GameplayListener implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         plugin.getDestructionService().stopLaser(event.getPlayer());
         plugin.getHudService().remove(event.getPlayer());
+        plugin.getCinematicService().removeMachine(event.getPlayer());
     }
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)

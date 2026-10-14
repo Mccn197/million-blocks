@@ -1,5 +1,5 @@
 name: MillionBlocks
-version: 0.5.1
+version: 0.6.0
 main: eu.reverie.millionblocks.MillionBlocksPlugin
 api-version: '26.2'
 authors: [Reverie]
@@ -18,3 +18,5 @@ permissions:
     default: op
   millionblocks.play:
     default: true
+
+softdepend: [BetterHud]

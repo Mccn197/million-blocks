@@ -24,6 +24,7 @@ public final class PortalService {
     private final Map<String,Location> locations=new LinkedHashMap<>();
     private final Map<String,List<Entity>> spawned=new HashMap<>();
     private final Set<String> rising=new HashSet<>();
+    private final Map<String,org.bukkit.scheduler.BukkitTask> animations=new HashMap<>();
     public PortalService(MillionBlocksPlugin plugin){this.plugin=plugin;this.portalId=new NamespacedKey(plugin,"portal-entity");this.file=new File(plugin.getDataFolder(),"portals.yml");}
     public void load(){ clearEntities();locations.clear();
         YamlConfiguration yaml=YamlConfiguration.loadConfiguration(file);
@@ -57,7 +58,7 @@ public final class PortalService {
     }
     private boolean repair(String id,Location loc){
         List<Entity> entities=spawned.get(id);
-        if(entities!=null && entities.size()>=8 && entities.stream().allMatch(Entity::isValid))return false;
+        if(entities!=null && entities.size()>=(plugin.getConfig().getBoolean("portal.use-custom-model",true)?3:8) && entities.stream().allMatch(Entity::isValid))return false;
         spawn(id,loc,false);
         return true;
     }
@@ -110,7 +111,9 @@ public final class PortalService {
     }
     public int clear(){int n=locations.size();for(String id:new ArrayList<>(locations.keySet()))remove(id);return n;}
     private void clearEntities(){for(String id:new ArrayList<>(spawned.keySet()))removeEntities(id);}
-    private void removeEntities(String id){List<Entity> list=spawned.remove(id);if(list!=null)for(Entity entity:list)if(entity.isValid())entity.remove();}
+    private void removeEntities(String id){
+        var animation=animations.remove(id);if(animation!=null)animation.cancel();rising.remove(id);
+        List<Entity> list=spawned.remove(id);if(list!=null)for(Entity entity:list)if(entity.isValid())entity.remove();}
     private void spawn(String id,Location base,boolean animate){
         removeEntities(id);
         World world=base.getWorld();if(world==null)return;
@@ -121,12 +124,22 @@ public final class PortalService {
         }
         List<Entity> list=new ArrayList<>();spawned.put(id,list);
         // The furniture is a 3D arrangement of client-side block displays; the terrain is not modified.
-        piece(list,id,base,Material.OAK_LOG,-1.5,0,0,.22f,2.4f,.27f);
-        piece(list,id,base,Material.OAK_LOG,1.27,0,0,.22f,2.4f,.27f);
-        piece(list,id,base,Material.OAK_PLANKS,-1.5,2.3,0,3f,.32f,.3f);
+        if(plugin.getConfig().getBoolean("portal.use-custom-model",true)) {
+            ItemDisplay model=world.spawn(base.clone().add(0,1.4,0),ItemDisplay.class,ent->{
+                ent.setItemStack(plugin.getItemFactory().createTravelPortal());
+                ent.setItemDisplayTransform(ItemDisplay.ItemDisplayTransform.FIXED);
+                ent.setTransformation(new Transformation(new Vector3f(),new AxisAngle4f(),new Vector3f(3f),new AxisAngle4f()));
+                ent.setTeleportDuration(1);ent.setRotation(base.getYaw(),0);
+                ent.getPersistentDataContainer().set(portalId,PersistentDataType.STRING,id);
+            });list.add(model);
+        } else {
+        piece(list,id,base,Material.IRON_BLOCK,-1.5,0,0,.22f,2.4f,.27f);
+        piece(list,id,base,Material.IRON_BLOCK,1.27,0,0,.22f,2.4f,.27f);
+        piece(list,id,base,Material.BLACK_CONCRETE,-1.5,2.3,0,3f,.32f,.3f);
         piece(list,id,base,Material.LIME_STAINED_GLASS,-1.20,.15,.07,2.48f,2.06f,.13f);
         piece(list,id,base,Material.LIME_STAINED_GLASS,-1.17,.20,.15,2.42f,1.95f,.045f);
         piece(list,id,base,Material.CRYING_OBSIDIAN,-1.25,.09,-.04,2.6f,.16f,.21f);
+        }
         TextDisplay label=world.spawn(base.clone().add(0,2.78,.06),TextDisplay.class,ent->{
             ent.setText("§c§lKEEP OUT §7• §c§lDANGER");ent.setBillboard(Display.Billboard.CENTER);
             ent.setSeeThrough(false);ent.setShadowed(true);ent.getPersistentDataContainer().set(portalId,PersistentDataType.STRING,id);
@@ -148,8 +161,9 @@ public final class PortalService {
                     Entity part=list.get(i);if(part.isValid())part.teleport(part.getLocation().add(0,step,0));
                 }
                 if(t%3==0)world.spawnParticle(Particle.HAPPY_VILLAGER,base.clone().add(0,.3,0),8,1.25,.25,.18,.01);
-                if(t>=18){rising.remove(id);task[0].cancel();}
+                if(t>=18){rising.remove(id);animations.remove(id);task[0].cancel();}
             },1,1);
+            animations.put(id,task[0]);
         }
     }
     private void piece(List<Entity> all,String id,Location base,Material type,double x,double y,double z,float sx,float sy,float sz){
@@ -159,7 +173,7 @@ public final class PortalService {
         // Temporary vanilla display model; the future Blockbench/Oraxen model will replace it.
         BlockDisplay display=where.getWorld().spawn(where,BlockDisplay.class,ent->{
             ent.setBlock(type.createBlockData());ent.setRotation(base.getYaw(),0);ent.setTransformation(new Transformation(new Vector3f(0,0,0),new AxisAngle4f(),new Vector3f(sx,sy,sz),new AxisAngle4f()));
-            ent.setViewRange(64);ent.getPersistentDataContainer().set(portalId,PersistentDataType.STRING,id);
+            ent.setViewRange(4);ent.setTeleportDuration(1);ent.getPersistentDataContainer().set(portalId,PersistentDataType.STRING,id);
         });all.add(display);
     }
 }

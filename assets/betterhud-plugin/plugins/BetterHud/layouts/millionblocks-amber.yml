@@ -1,34 +1,111 @@
-# Preview layout - PAPI expansion is NOT installed in V0.5.1.
 mb_amber_layout:
   images:
-    1:
+    '1':
       name: mb_amber_panel
-      x: 0
+      x: 52
       y: 0
-    2:
+    '2':
       name: mb_amber_pickaxe
-      x: -28
-      y: -13
-    3:
-      name: mb_amber_block
       x: 0
+      y: -16
+      conditions:
+        '1':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
+    '3':
+      name: mb_amber_block
+      x: 20
       y: 0
-    4:
+      conditions:
+        '1':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
+    '4':
       name: mb_crack_0
-      x: 8
+      x: 28
       y: 8
+      conditions:
+        '1':
+          first: millionblocks_crack
+          second: '0'
+          operation: ==
+        '2':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
+    '5':
+      name: mb_crack_1
+      x: 28
+      y: 8
+      conditions:
+        '1':
+          first: millionblocks_crack
+          second: '1'
+          operation: ==
+        '2':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
+    '6':
+      name: mb_crack_2
+      x: 28
+      y: 8
+      conditions:
+        '1':
+          first: millionblocks_crack
+          second: '2'
+          operation: ==
+        '2':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
+    '7':
+      name: mb_crack_3
+      x: 28
+      y: 8
+      conditions:
+        '1':
+          first: millionblocks_crack
+          second: '3'
+          operation: ==
+        '2':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
+    '8':
+      name: mb_crack_4
+      x: 28
+      y: 8
+      conditions:
+        '1':
+          first: millionblocks_crack
+          second: '4'
+          operation: ==
+        '2':
+          first: millionblocks_icon
+          second: 'true'
+          operation: ==
   texts:
-    1:
+    '1':
       name: mb_font
-      pattern: "[millionblocks_count]"
-      x: 240
+      pattern: <#fff2d6>[millionblocks_count]
+      x: 70
       y: 15
-      align: right
-      outline: true
-      scale: 1
-    2:
+      align: left
+      scale: 1.6
+    '2':
       name: mb_font
-      pattern: "<#ffca31>x[millionblocks_multiplier]"
-      x: -20
-      y: -17
-      align: right
+      pattern: <#ffca31>[millionblocks_multiplier]
+      x: 35
+      y: -12
+      align: left
+      scale: 1
+    '3':
+      name: mb_font
+      pattern: <#b9c4c4>[millionblocks_goal]  [millionblocks_percent]
+      x: 70
+      y: 48
+      align: left
+      scale: 0.85

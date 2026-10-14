@@ -55,6 +55,7 @@ public final class ItemFactory {
             long unlock = unlockAt(id);
             if (unlock > 0) lore.add(plugin.legacy("<dark_gray>Déblocage : <yellow>" + formatNumber(unlock) + " blocs</yellow></dark_gray>"));
             meta.setLore(lore);
+            meta.setItemModel(new NamespacedKey("millionblocks", modelId(id)));
             meta.getPersistentDataContainer().set(toolKey, PersistentDataType.STRING, id.name());
             stack.setItemMeta(meta);
         }
@@ -98,6 +99,7 @@ public final class ItemFactory {
                 plugin.legacy("<gray>Clic droit sur le portail : voyager au hub.</gray>"),
                 plugin.legacy("<gray>Clic gauche sur le portail : le retirer.</gray>"),
                 plugin.legacy("<yellow>Objet illimité : pas consommé à la pose.</yellow>")));
+            meta.setItemModel(new NamespacedKey("millionblocks", "shop_portal"));
             meta.getPersistentDataContainer().set(travelKey, PersistentDataType.STRING, "WORLD_PORTAL_V2");
             stack.setItemMeta(meta);
         }
@@ -151,6 +153,15 @@ public final class ItemFactory {
         return plugin.legacy(section == null ? id.name() : section.getString("name", id.name()));
     }
 
+    public static String modelId(ToolId id) {
+        return switch(id) {
+            case SUPER_PICKAXE -> "prismbreaker"; case MINING_HAMMER -> "quakehammer";
+            case CREEPER_MINER -> "detonation_buddy"; case TNT_LAUNCHER -> "blastcaster";
+            case DRILL -> "bore_x"; case LASER -> "redline_portable";
+            case METEOR -> "starfall_beacon"; case WORLD_EATER -> "void_engine";
+            default -> "shop_portal";
+        };
+    }
     public static String formatNumber(long value) {
         return String.format(java.util.Locale.US, "%,d", value).replace(',', ' ');
     }

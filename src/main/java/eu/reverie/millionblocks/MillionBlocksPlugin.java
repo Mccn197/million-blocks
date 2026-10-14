@@ -25,6 +25,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     private PortalService portalService;
     private SchematicService schematicService;
     private String shopTitle;
+    private CinematicService cinematicService;
 
     @Override
     public void onEnable() {
@@ -32,6 +33,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         this.progressService = new ProgressService(this);
         this.itemFactory = new ItemFactory(this);
         this.destructionService = new DestructionService(this);
+        this.cinematicService = new CinematicService(this);
         this.debrisService = new DebrisService(this);
         this.arenaService = new ArenaService(this);
         this.worldService = new WorldService(this);
@@ -44,6 +46,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         refreshRuntimeConfig();
         this.showcaseService.reload();
         this.portalService.load();
+        this.hudService.connect();
         this.hudService.start();
 
         getServer().getPluginManager().registerEvents(new GameplayListener(this), this);
@@ -58,7 +61,8 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         if (destructionService != null) destructionService.stopAll();
-        if (hudService != null) hudService.stop();
+        if (hudService != null) hudService.shutdown();
+        if (cinematicService != null) cinematicService.shutdown();
         if (showcaseService != null) showcaseService.shutdown();
         if (portalService != null) portalService.shutdown();
         if (schematicService != null) schematicService.cancel();
@@ -79,7 +83,8 @@ public final class MillionBlocksPlugin extends JavaPlugin {
 
     public void addProgress(Player player, long amount) {
         long before = progressService.get(player);
-        long after = progressService.add(player, amount);
+        long after = progressService.set(player, HudState.addSaturated(before, amount, hudService.multiplier()));
+        if (amount > 0 && hudService != null) hudService.mined(player);
         if (hudService != null) hudService.update(player);
         long target = getTargetBlocks();
         if (before < target && after >= target) triggerVictory(player, false);
@@ -170,5 +175,6 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     public HudService getHudService() { return hudService; }
     public ShowcaseService getShowcaseService() { return showcaseService; }
     public PortalService getPortalService() { return portalService; }
+    public CinematicService getCinematicService() { return cinematicService; }
     public SchematicService getSchematicService() { return schematicService; }
 }

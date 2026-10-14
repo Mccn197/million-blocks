@@ -26,7 +26,7 @@ public final class DestructionService {
     public DestructionService(MillionBlocksPlugin plugin) { this.plugin = plugin; }
 
     public int breakCube(Player player, Block center, int rx, int ry, int rz, int cap) {
-        if (blocked(player.getWorld())) return 0;
+        if (blocked(center.getWorld())) return 0;
         List<Block> targets = new ArrayList<>();
         World world = center.getWorld();
         for (int x=-rx; x<=rx; x++) for (int y=-ry; y<=ry; y++) for (int z=-rz; z<=rz; z++) {
@@ -49,7 +49,12 @@ public final class DestructionService {
 
     public void laser(Player player) { startLaser(player); }
 
-    public void startLaser(Player player) {
+    public void startLaser(Player player) { startLaser(player, false); }
+    public void startMountedLaser(Player player) {
+        if(!plugin.getCinematicService().isPilot(player))throw new IllegalArgumentException("Monte dans REDLINE d'abord");
+        stopLaser(player); startLaser(player, true);
+    }
+    private void startLaser(Player player, boolean mounted) {
         if (blocked(player.getWorld()) || activeLasers.containsKey(player.getUniqueId())) return;
         UUID key = player.getUniqueId();
         World initial = player.getWorld();
@@ -63,11 +68,11 @@ public final class DestructionService {
             @Override public void run() {
                 age+=interval;
                 if (!player.isOnline() || player.getWorld()!=initial
-                    || plugin.getItemFactory().identify(player.getInventory().getItemInMainHand())!=ToolId.LASER
-                    || (age>5 && !player.isHandRaised()) || blocked(player.getWorld())) {
+                    || (mounted ? !plugin.getCinematicService().isPilot(player)
+                        : plugin.getItemFactory().identify(player.getInventory().getItemInMainHand())!=ToolId.LASER || (age>5 && !player.isHandRaised())) || blocked(player.getWorld())) {
                     stopLaser(player);return;
                 }
-                Location eye=player.getEyeLocation();
+                Location eye=mounted?plugin.getCinematicService().emitter(player):player.getEyeLocation();
                 Vector dir=eye.getDirection().normalize();
                 Vector side=dir.clone().crossProduct(new Vector(0,1,0));
                 if(side.lengthSquared()<0.01) side=new Vector(1,0,0);
@@ -78,7 +83,7 @@ public final class DestructionService {
                 for(int dist=2;dist<=range;dist+=2){
                     Location point=eye.clone().add(dir.clone().multiply(dist));
                     // A bright, always visible continuous beam (even when the ray hits no blocks).
-                    initial.spawnParticle(Particle.END_ROD,point,2,0.10,0.10,0.10,0.0);
+                    initial.spawnParticle(Particle.DUST,point,4,0.035,0.035,0.035,0.0,new Particle.DustOptions(Color.fromRGB(255,30,45),1.5f));
                     initial.spawnParticle(Particle.ELECTRIC_SPARK,point,1,0.07,0.07,0.07,0.02);
                     for(int a=-radius;a<=radius;a++)for(int b=-radius;b<=radius;b++) {
                         if(destroyed>=maxBlocksPerPulse)break;
@@ -117,6 +122,7 @@ public final class DestructionService {
              .multiply(Math.max(1.0,Math.min(5.0,plugin.getConfig().getDouble("weapons.tnt.velocity",2.8)))));
         tnt.setSource(player);
         player.playSound(player.getLocation(),Sound.ENTITY_ARROW_SHOOT,1.0f,0.75f);
+        plugin.getCinematicService().animate(player,ToolId.TNT_LAUNCHER,8);
     }
 
     public void deployCreeper(Player player) {
@@ -151,13 +157,14 @@ public final class DestructionService {
 
     public void drill(Player player) {
         if(blocked(player.getWorld()))return;
+        plugin.getCinematicService().animate(player,ToolId.DRILL,30);
         Location origin=player.getEyeLocation();
         Vector direction=origin.getDirection().normalize();
         int range=Math.min(120,plugin.getConfig().getInt("weapons.drill.range",45));
         for(int step=2;step<=range;step+=3){
             final int at=step;
             plugin.getServer().getScheduler().runTaskLater(plugin,()-> {
-                if(blocked(origin.getWorld()))return;
+                if(!player.isOnline() || player.getWorld()!=origin.getWorld() || blocked(origin.getWorld()))return;
                 Block center=origin.clone().add(direction.clone().multiply(at)).getBlock();
                 breakCube(player,center,1,1,1,27);
                 origin.getWorld().spawnParticle(Particle.BLOCK_CRUMBLE,center.getLocation().add(.5,.5,.5),
@@ -177,7 +184,7 @@ public final class DestructionService {
         new BukkitRunnable() {
             long t=0;
             @Override public void run() {
-                if(blocked(target.getWorld())) {cancel();return;}
+                if(!player.isOnline() || player.getWorld()!=target.getWorld() || blocked(target.getWorld())) {cancel();return;}
                 t+=2;
                 Location p=target.clone().add(0,Math.max(0,28.0*(1.0-(double)t/delay)),0);
                 target.getWorld().spawnParticle(Particle.FLAME,p,35,1.1,1.1,1.1,.04);
@@ -203,12 +210,13 @@ public final class DestructionService {
         final Location target=aim(player,range);
         final int radius=Math.max(15,Math.min(45,plugin.getConfig().getInt("weapons.world-eater.radius",34)));
         final long delay=Math.max(15,plugin.getConfig().getInt("weapons.world-eater.charge-ticks",60));
+        plugin.getCinematicService().animate(player,ToolId.WORLD_EATER,(int)delay);
         player.sendMessage("§5§lWORLD EATER §d— surcharge... éloigne-toi !");
         new BukkitRunnable(){
             int t=0;
             @Override public void run(){
                 t+=2;
-                if(blocked(target.getWorld())){cancel();return;}
+                if(!player.isOnline() || player.getWorld()!=target.getWorld() || blocked(target.getWorld())){cancel();return;}
                 double r=2+(double)t/delay*radius;
                 for(int k=0;k<32;k++){
                     double theta=2*Math.PI*k/32;
@@ -289,7 +297,7 @@ public final class DestructionService {
             int removed=0;
             int elapsed=0;
             @Override public void run(){
-                if(blocked(world) || ++elapsed>1800){finish();return;}
+                if(!owner.isOnline() || owner.getWorld()!=world || blocked(world) || ++elapsed>1800){finish();return;}
                 int budget=0,scanned=0;
                 while(index<total && removed<maxBlocks && budget<blockBudget && scanned<blockBudget*16){
                     int x=(int)(index%diameter)-radius;
@@ -308,6 +316,7 @@ public final class DestructionService {
                     removed++;budget++;
                 }
                 if(burst && elapsed%3==0)world.spawnParticle(Particle.END_ROD,origin,40,radius*.7,radius*.7,radius*.7,.03);
+                if(budget>0)plugin.addProgress(owner,budget);
                 if(index>=total || removed>=maxBlocks)finish();
             }
             private void finish() {
@@ -315,7 +324,7 @@ public final class DestructionService {
                 for(org.bukkit.Chunk chunk:ticketed)
                     world.removePluginChunkTicket(chunk.getX(),chunk.getZ(),plugin);
                 if(owner.isOnline()){
-                    if(removed>0)plugin.addProgress(owner,removed);
+                    // Each pulse already updates the score and HUD immediately.
                     owner.sendMessage("§6Destruction massive terminée : §e"+ItemFactory.formatNumber(removed)+" §6blocs");
                 }
                 cancel();

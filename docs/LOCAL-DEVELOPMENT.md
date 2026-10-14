@@ -1,33 +1,14 @@
-# Local development workflow
+# Développement local V0.6
 
-## Requirements
-- Java 25 (Paper 26.1+ requires Java 25)
-- Maven 3.9+
-- 4 GB RAM recommended for a local Paper server
+Voir [BUILD-V06.md](BUILD-V06.md) pour Java/Maven et les limites de la compilation source API.
+Voir [INSTALLATION-V06.md](INSTALLATION-V06.md) pour la checklist complète.
 
-## Setup
-1. Run `scripts/setup-local.sh` (Linux/macOS) or `scripts/setup-local.ps1` (Windows PowerShell).
-2. Build with `mvn clean package`.
-3. Copy `target/MillionBlocks-*.jar` into `local/server/plugins/`.
-4. Start with the generated script in `local/server/`.
-5. Accept the EULA on first setup (`eula=true` is written by our setup scripts).
+Après accès aux téléchargements Paper et avec Java 25 actif, `scripts/setup-local.sh`
+ou `scripts/setup-local.ps1` prépare exclusivement Paper **26.2 build 121**, vérifie son SHA-256,
+refuse de remplacer un JAR existant et ne démarre rien. L'EULA n'est pas acceptée automatiquement.
+Le téléchargement n'a pas été validé dans cette session (accès réseau bloqué) ; le script
+PowerShell n'a pas été exécuté. Aucun autre build n'est choisi silencieusement.
 
-The setup script downloads the latest STABLE Paper build for Minecraft 26.2 using PaperMC's official Downloads Service.
-
-## Fast test loop
-- `/mb arena reset`
-- `/mb progress set 324999`
-- `/mb progress add 1`
-- `/mb give laser`
-- test the laser
-- `/mb arena reset`
-
-For victory:
-- `/mb progress set 999999`
-- break one block, or `/mb victory`
-
-For all tools:
-- `/mb give all`
-
-## Map strategy
-Keep the filming world separate from logic. The plugin should work against any survival map. For destructive integration tests, use a disposable test arena or a copied world folder.
+Après compilation exacte et revue de l'EULA, installer manuellement le JAR dans ce serveur
+local puis démarrer `local/server/start.sh`. Utiliser des copies de mondes et suivre la
+checklist HUD/armes/snapshot. Les processus ne persistent pas après une restauration cloud.

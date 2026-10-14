@@ -121,7 +121,7 @@ world-system:
 
 hud:
   enabled: true
-  mode: custom
+  mode: betterhud
   custom-fallback-bossbar: true
   use-resource-pack-glyphs: false
   multiplier: 1
@@ -132,7 +132,7 @@ hud:
   title: "§6⛏ §e{current} §7/ §f{target} blocs §8• §b{percent}%"
   color: YELLOW
   style: SEGMENTED_10
-  update-interval-ticks: 10
+  update-interval-ticks: 2
 
 showcase:
   click-to-claim: true
@@ -150,6 +150,8 @@ showcase:
 
 # V0.4 - these settings apply even on previously installed 0.3 configs via defaults.
 portal:
+  # Requires the MillionBlocks resource pack; false uses industrial vanilla BlockDisplays.
+  use-custom-model: true
   auto-give-item: true
   max-active: -1
 hub:

@@ -8,7 +8,7 @@ import java.util.*;
 public final class MillionBlocksCommand implements TabExecutor {
     private final MillionBlocksPlugin plugin;
     public MillionBlocksCommand(MillionBlocksPlugin plugin){this.plugin=plugin;}
-    private static final List<String> ROOT=List.of("help","info","progress","give","world","survival","hub","portal","hud","showcase","victory","arena","reload");
+    private static final List<String> ROOT=List.of("help","info","laser","progress","give","world","survival","hub","portal","hud","showcase","victory","arena","reload");
     @Override public boolean onCommand(CommandSender sender,Command command,String alias,String[] args){
         if(!(sender instanceof Player p)){sender.sendMessage("Use /mb from an in-game OP account.");return true;}
         try{
@@ -24,6 +24,7 @@ public final class MillionBlocksCommand implements TabExecutor {
                 case "hub" -> hub(p,args);
                 case "portal" -> portal(p,args);
                 case "hud" -> hud(p,args);
+                case "laser" -> laser(p,args);
                 case "showcase" -> showcase(p,args);
                 case "victory" -> plugin.triggerVictory(p,true);
                 case "arena" -> {require(args,2,"/mb arena reset");int blocks=plugin.getArenaService().reset();p.sendMessage("§aArena reset: "+blocks);}
@@ -104,7 +105,7 @@ public final class MillionBlocksCommand implements TabExecutor {
                  p.sendMessage("§aPortails V1 remplacés dans ton inventaire: "+n+" §7(Tu peux /mb portal give).");}
             case "inspect" ->p.sendMessage("§ePortail en main: §f"+
                   plugin.getItemFactory().portalVersion(p.getInventory().getItemInMainHand())+
-                  " §7| Modèle actuel: BlockDisplay vanilla (pas encore modèle Blockbench/Oraxen)");
+                  " §7| Modèle: ItemDisplay custom / fallback industriel selon portal.use-custom-model");
             case "list" ->{p.sendMessage("§ePortails: "+service.count());service.list().stream().limit(30).forEach(p::sendMessage);}
             case "remove" ->{require(a,3,"/mb portal remove nearest [radius]|all confirm|<id>");String removed;
                 if(a[2].equalsIgnoreCase("nearest"))removed=service.removeNearest(p,a.length>=4?Double.parseDouble(a[3]):8);
@@ -117,14 +118,29 @@ public final class MillionBlocksCommand implements TabExecutor {
             default ->throw new IllegalArgumentException("give|refresh|inspect|list|remove|exit create|reload");
         }
     }
+    private void laser(Player p,String[] a) {
+        require(a,2,"/mb laser place|mount|fire on|fire off|remove");
+        switch(a[1].toLowerCase(Locale.ROOT)) {
+            case "place" -> plugin.getCinematicService().placeMachine(p);
+            case "mount" -> plugin.getCinematicService().mount(p);
+            case "remove" -> plugin.getCinematicService().removeMachine(p);
+            case "fire" -> {
+                require(a,3,"/mb laser fire on|off");
+                if(a[2].equalsIgnoreCase("on"))plugin.getDestructionService().startMountedLaser(p);
+                else if(a[2].equalsIgnoreCase("off"))plugin.getDestructionService().stopLaser(p);
+                else throw new IllegalArgumentException("on|off");
+            }
+            default -> throw new IllegalArgumentException("place|mount|fire on|fire off|remove");
+        }
+    }
     private void hud(Player p,String[] a){HudService h=plugin.getHudService();String op=a.length>=2?a[1]:"refresh";
         switch(op.toLowerCase(Locale.ROOT)){
             case "show" ->h.show(p);case "hide"->h.hide(p);case "refresh"->h.update(p);
             case "debug" ->{h.update(p);p.sendMessage(h.diagnostics(p));}
-            case "mode" ->{require(a,3,"/mb hud mode custom|bossbar|off");h.setMode(a[2]);}
+            case "mode" ->{require(a,3,"/mb hud mode betterhud|custom|bossbar|off");h.setMode(a[2]);}
             case "toggle" ->{if(a.length==2)p.sendMessage(h.toggle(p)?"§aHUD visible":"§7HUD masqué");else p.sendMessage("§e"+a[2]+" = "+h.toggleOption(a[2]));}
             case "pack" ->{require(a,3,"/mb hud pack on|off");plugin.getConfig().set("hud.use-resource-pack-glyphs",a[2].equalsIgnoreCase("on"));plugin.saveConfig();h.updateAll();}
-            case "multiplier" ->{require(a,3,"/mb hud multiplier <n>");plugin.getConfig().set("hud.multiplier",Math.max(1,Math.min(999,Integer.parseInt(a[2]))));plugin.saveConfig();h.updateAll();}
+            case "multiplier" ->{require(a,3,"/mb hud multiplier <n>");plugin.getConfig().set("hud.multiplier",parseMultiplier(a[2]));plugin.saveConfig();h.updateAll();}
             case "reload" ->h.reload();default ->throw new IllegalArgumentException("mode|show|hide|toggle|pack|multiplier|reload|debug");
         }
         if(!op.equals("toggle"))p.sendMessage("§aHUD: "+h.mode());
@@ -159,9 +175,12 @@ public final class MillionBlocksCommand implements TabExecutor {
         switch(op){case "all" ->plugin.reloadEverything();case "config"->{plugin.reloadConfig();plugin.refreshRuntimeConfig();plugin.getHudService().reload();}
             case "showcases"->plugin.getShowcaseService().reload();case "portals"->plugin.getPortalService().load();case "hud"->plugin.getHudService().reload();
             default ->throw new IllegalArgumentException("all|config|showcases|portals|hud");}p.sendMessage("§aReload "+op);}
+    private int parseMultiplier(String raw) {
+        int n=Integer.parseInt(raw); if(n!=1 && n!=2)throw new IllegalArgumentException("Multiplicateur: 1|2"); return n;
+    }
     private void require(String[] a,int n,String usage){if(a.length<n)throw new IllegalArgumentException(usage);}
     private void help(Player p){
-        p.sendMessage("§6§lMillionBlocks V0.4 §7— commandes OP / TAB");
+        p.sendMessage("§6§lMillionBlocks V0.6 §7— commandes OP / TAB");
         p.sendMessage("§e/mb hub sky create §7— crée le monde céleste indépendant");
         p.sendMessage("§e/mb hub island create 55 confirm §7— socle rocheux flottant");
         p.sendMessage("§e/mb hub schem info|paste confirm|cancel §7— ton .schem");
@@ -170,9 +189,10 @@ public final class MillionBlocksCommand implements TabExecutor {
         p.sendMessage("§e/mb hub edit on|off §7— bypass personnel");
         p.sendMessage("§e/mb showcase circle 8 §7— musée en cercle");
         p.sendMessage("§e/mb portal give|refresh|inspect|list|remove|exit create|reload");
-        p.sendMessage("§e/mb hud mode custom|bossbar|off §7— HUD");
+        p.sendMessage("§e/mb hud mode betterhud|custom|bossbar|off §7— HUD");
         p.sendMessage("§e/mb hud toggle goal|percent|multiplier|icon");
         p.sendMessage("§e/mb hud pack on|off §7— glyphes resource pack");
+        p.sendMessage("§e/mb laser place|mount|fire on|fire off|remove §7— REDLINE pilotable");
         p.sendMessage("§e/mb hud debug §7— diagnostic visibilité HUD");
         p.sendMessage("§e/mb give all §7/ §e/mb progress set 990000 §7/ §e/mb victory");
         p.sendMessage("§e/mb world mining|survival §7/ §e/mb reload all");
@@ -181,7 +201,7 @@ public final class MillionBlocksCommand implements TabExecutor {
     @Override public List<String> onTabComplete(CommandSender sender,Command command,String label,String[] a){
         if(a.length==1)return filter(ROOT,a[0]);String root=a[0].toLowerCase(Locale.ROOT);
         if(a.length==2)return filter(switch(root){
-            case "progress"->List.of("get","set","add","reset");case "give"->giveSuggestions();case "world"->List.of("mining","survival");case "survival"->List.of("prepare","use","status");
+            case "laser"->List.of("place","mount","fire","remove");case "progress"->List.of("get","set","add","reset");case "give"->giveSuggestions();case "world"->List.of("mining","survival");case "survival"->List.of("prepare","use","status");
             case "hub"->List.of("lock","edit","sky","island","schem","spawn");case "portal"->List.of("give","refresh","inspect","list","remove","exit","reload");
             case "hud"->List.of("mode","show","hide","toggle","pack","multiplier","reload","refresh","debug");
             case "showcase"->List.of("line","circle","place","move","remove","clear","list","save","reload","respawn","repair");
@@ -189,9 +209,9 @@ public final class MillionBlocksCommand implements TabExecutor {
         if(a.length==3){return filter(switch(root){
             case "hub"-> switch(a[1]){case "lock"->List.of("on","off","toggle","status");case "edit"->List.of("on","off");case "sky"->List.of("create");case "island"->List.of("create");case "schem"->List.of("info","paste","cancel");case "spawn"->List.of("set");default->List.of();};
             case "portal"->switch(a[1]){case "remove"->List.of("nearest","all");case "exit"->List.of("create");default->List.of();};
-            case "hud"->switch(a[1]){case "mode"->List.of("custom","bossbar","off");case "toggle"->List.of("goal","percent","multiplier","icon");case "pack"->List.of("on","off");case "multiplier"->List.of("1","2","3","4","8");default->List.of();};
+            case "hud"->switch(a[1]){case "mode"->List.of("betterhud","custom","bossbar","off");case "toggle"->List.of("goal","percent","multiplier","icon");case "pack"->List.of("on","off");case "multiplier"->List.of("1","2");default->List.of();};
             case "showcase"->switch(a[1]){case "place"->tools();case "remove"->plugin.getShowcaseService().ids();case "move"-> {List<String> l=new ArrayList<>(List.of("nearest"));l.addAll(plugin.getShowcaseService().ids());yield l;}case "circle"->List.of("6","8","10","12");case "line"->List.of("2","3","4");default->List.of();};
-            case "survival"->List.of("new","old");case "give"->tools();case "progress"->List.of("1000","325000","800000","990000","1000000");default->List.of();},a[2]);}
+            case "laser"->List.of("on","off");case "survival"->List.of("new","old");case "give"->tools();case "progress"->List.of("1000","325000","800000","990000","1000000");default->List.of();},a[2]);}
         if(a.length==4){if(root.equals("hub")&&a[1].equals("schem")&&a[2].equals("paste"))return filter(List.of("confirm"),a[3]);
             if(root.equals("hub")&&a[1].equals("island"))return filter(List.of("55","60","70","90"),a[3]);
             if(root.equals("portal")&&a[1].equals("remove")&&a[2].equals("all"))return filter(List.of("confirm"),a[3]);}

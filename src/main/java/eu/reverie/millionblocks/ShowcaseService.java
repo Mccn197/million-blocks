@@ -21,6 +21,12 @@ import org.bukkit.util.Vector;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -34,6 +40,8 @@ public final class ShowcaseService {
     private final NamespacedKey showcaseIdKey;
     private final NamespacedKey showcaseToolKey;
     private final Map<String, ShowcaseDefinition> definitions = new LinkedHashMap<>();
+    // Preserve YAML entries for worlds not loaded yet or newer/unknown item types.
+    private final Map<String, Map<String, Object>> deferred = new LinkedHashMap<>();
     private final Map<String, DisplayBundle> spawned = new LinkedHashMap<>();
     private int nextId = 1;
     private BukkitTask animationTask;
@@ -49,6 +57,7 @@ public final class ShowcaseService {
         stopAnimation();
         removeSpawnedEntities();
         definitions.clear();
+        deferred.clear();
         load();
         respawnAll();
         startAnimation();
@@ -56,7 +65,8 @@ public final class ShowcaseService {
 
     public void shutdown() {
         stopAnimation();
-        save();
+        // Mutations already save immediately. Never overwrite disk data just because
+        // no worlds or showcase definitions were available during plugin shutdown.
         removeSpawnedEntities();
     }
 
@@ -186,7 +196,7 @@ public final class ShowcaseService {
         ShowcaseDefinition removed = definitions.remove(id);
         DisplayBundle bundle = spawned.remove(id);
         if (bundle != null) bundle.remove();
-        if (removed != null) save();
+        if (removed != null) save(definitions.isEmpty() && deferred.isEmpty());
         return removed != null;
     }
 
@@ -205,8 +215,9 @@ public final class ShowcaseService {
     public int clear() {
         int count = definitions.size();
         definitions.clear();
+        deferred.clear();
         removeSpawnedEntities();
-        save();
+        save(true);
         return count;
     }
 
@@ -226,7 +237,49 @@ public final class ShowcaseService {
     }
 
     public List<String> ids() {
-        return new ArrayList<>(definitions.keySet());
+        List<String> all=new ArrayList<>(definitions.keySet());
+        all.addAll(deferred.keySet());
+        return all;
+    }
+
+    public int deferredCount() { return deferred.size(); }
+
+    public int resolveWorld(World world) {
+        if (world == null) return 0;
+        int resolved=0;
+        for (String id: new ArrayList<>(deferred.keySet())) {
+            Map<String,Object> raw=deferred.get(id);
+            if (!world.getName().equals(String.valueOf(raw.get("world")))) continue;
+            try {
+                ToolId tool=ToolId.valueOf(String.valueOf(raw.get("tool")));
+                Location loc=new Location(world,
+                    num(raw.get("x")),num(raw.get("y")),num(raw.get("z")),
+                    (float)num(raw.get("yaw")),(float)num(raw.get("pitch")));
+                ShowcaseDefinition def=new ShowcaseDefinition(id,tool,loc);
+                definitions.put(id,def);
+                deferred.remove(id);
+                spawn(def);
+                resolved++;
+            } catch (Exception ex) {
+                plugin.getLogger().warning("Deferred showcase "+id+" still cannot load: "+ex.getMessage());
+            }
+        }
+        return resolved;
+    }
+    private static double num(Object o) {
+        if(o instanceof Number n)return n.doubleValue();
+        return Double.parseDouble(String.valueOf(o));
+    }
+
+    public String diagnostic() {
+        int onDisk=0;
+        if(file.isFile()){
+            ConfigurationSection root=YamlConfiguration.loadConfiguration(file).getConfigurationSection("showcases");
+            if(root!=null)onDisk=root.getKeys(false).size();
+        }
+        return "§eShowcases: actifs=§f"+definitions.size()+" §edeferred=§f"+deferred.size()+
+            " §esur disque=§f"+onDisk+" §7"+file.getAbsolutePath()+" ("+
+            (file.isFile()?file.length()+" octets":"fichier absent")+")";
     }
 
     public ToolId identifyShowcaseTool(Entity entity) {
@@ -260,8 +313,15 @@ public final class ShowcaseService {
         return true;
     }
 
-    public boolean save() {
+    public boolean save() { return save(false); }
+
+    private boolean save(boolean explicitClear) {
         YamlConfiguration yaml = new YamlConfiguration();
+        // Entries for unloaded worlds MUST survive a re-save from a different world.
+        for (Map.Entry<String,Map<String,Object>> entry: deferred.entrySet()) {
+            for (Map.Entry<String,Object> field:entry.getValue().entrySet())
+                yaml.set("showcases."+entry.getKey()+"."+field.getKey(),field.getValue());
+        }
         for (ShowcaseDefinition def : definitions.values()) {
             String path = "showcases." + def.id();
             Location loc = def.location();
@@ -275,10 +335,27 @@ public final class ShowcaseService {
         }
         try {
             if (!plugin.getDataFolder().exists()) plugin.getDataFolder().mkdirs();
-            yaml.save(file);
+            if(!explicitClear && definitions.isEmpty() && deferred.isEmpty() && file.isFile()){
+                ConfigurationSection existing=YamlConfiguration.loadConfiguration(file).getConfigurationSection("showcases");
+                if((existing!=null && !existing.getKeys(false).isEmpty()) || (existing==null && file.length()>0)){
+                    plugin.getLogger().severe("Refusing to erase all saved showcases. Use explicit /mb showcase clear if intended.");
+                    return false;
+                }
+            }
+            File tmp = new File(file.getParentFile(),file.getName()+".tmp");
+            yaml.save(tmp);
+            if(file.exists() && file.length()>0) {
+                String stamp=LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss-SSS"));
+                Files.copy(file.toPath(),new File(file.getParentFile(),file.getName()+".bak-"+stamp).toPath());
+            }
+            try {
+                Files.move(tmp.toPath(),file.toPath(),StandardCopyOption.REPLACE_EXISTING,StandardCopyOption.ATOMIC_MOVE);
+            } catch(java.nio.file.AtomicMoveNotSupportedException notAtomic) {
+                Files.move(tmp.toPath(),file.toPath(),StandardCopyOption.REPLACE_EXISTING);
+            }
             return true;
         } catch (IOException ex) {
-            plugin.getLogger().severe("Could not save showcases.yml: " + ex.getMessage());
+            plugin.getLogger().severe("Could not safely save showcases.yml: " + ex.getMessage());
             return false;
         }
     }
@@ -287,15 +364,25 @@ public final class ShowcaseService {
         if (!file.exists()) return;
         YamlConfiguration yaml = YamlConfiguration.loadConfiguration(file);
         ConfigurationSection root = yaml.getConfigurationSection("showcases");
-        if (root == null) return;
+        if (root == null) {
+            if (file.length()>0) plugin.getLogger().warning("showcases.yml has no 'showcases:' root; it will NOT be overwritten.");
+            return;
+        }
         int max = 0;
         for (String id : root.getKeys(false)) {
+            ConfigurationSection section=yaml.getConfigurationSection("showcases."+id);
+            if(section==null)continue;
+            Map<String,Object> snapshot=new LinkedHashMap<>(section.getValues(false));
+            if(id.startsWith("sc-")) {
+                try{max=Math.max(max,Integer.parseInt(id.substring(3)));}catch(NumberFormatException ignored){}
+            }
             String path = "showcases." + id;
             try {
                 ToolId tool = ToolId.valueOf(yaml.getString(path + ".tool", "SUPER_PICKAXE"));
                 World world = Bukkit.getWorld(yaml.getString(path + ".world", ""));
                 if (world == null) {
-                    plugin.getLogger().warning("Skipping showcase " + id + ": world not loaded.");
+                    deferred.put(id,snapshot);
+                    plugin.getLogger().warning("Deferred showcase " + id + ": world not loaded. YAML definition preserved.");
                     continue;
                 }
                 Location loc = new Location(world,
@@ -306,7 +393,8 @@ public final class ShowcaseService {
                     try { max = Math.max(max, Integer.parseInt(id.substring(3))); } catch (NumberFormatException ignored) { }
                 }
             } catch (IllegalArgumentException ex) {
-                plugin.getLogger().warning("Skipping invalid showcase " + id + ": " + ex.getMessage());
+                deferred.put(id,snapshot);
+                plugin.getLogger().warning("Deferred invalid showcase " + id + ": " + ex.getMessage()+". YAML definition preserved.");
             }
         }
         nextId = Math.max(1, max + 1);
@@ -359,12 +447,17 @@ public final class ShowcaseService {
     }
 
     private void removeSpawnedEntities() {
+        // Never delete unknown tagged displays when YAML wasn't loaded; they might
+        // be the user's only surviving evidence after a corrupt/missing data file.
+        Set<String> known=new HashSet<>(definitions.keySet());
+        known.addAll(spawned.keySet());
         for (DisplayBundle bundle : spawned.values()) bundle.remove();
         spawned.clear();
-        // Also clean orphan entities left by a previous plugin disable/crash.
+        if(known.isEmpty())return;
         for (World world : Bukkit.getWorlds()) {
             for (Entity entity : world.getEntities()) {
-                if (entity.getPersistentDataContainer().has(showcaseIdKey, PersistentDataType.STRING)) entity.remove();
+                String id=entity.getPersistentDataContainer().get(showcaseIdKey,PersistentDataType.STRING);
+                if(id!=null && known.contains(id)) entity.remove();
             }
         }
     }

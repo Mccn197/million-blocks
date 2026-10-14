@@ -157,7 +157,8 @@ public final class MillionBlocksCommand implements TabExecutor {
                 p.sendMessage((saved?"§aDéplacé et sauvegardé: ":"§cDéplacé mais sauvegarde échouée: ")+s.fullDetails(moved));}
             case "remove" ->{require(a,3,"/mb showcase remove nearest [radius]|id");p.sendMessage("§aSupprimé: "+(a[2].equals("nearest")?s.removeNearest(p,a.length>=4?Double.parseDouble(a[3]):8.0):s.remove(a[2])));}
             case "clear" ->p.sendMessage("§aSupprimés: "+s.clear());
-            case "list" ->{p.sendMessage("§eShowcases: "+s.ids().size());s.describe().stream().limit(30).forEach(p::sendMessage);}
+            case "list" ->{p.sendMessage("§eShowcases: "+s.ids().size()+" (dont "+s.deferredCount()+" en attente de monde)");s.describe().stream().limit(30).forEach(p::sendMessage);}
+            case "diagnose" ->p.sendMessage(s.diagnostic());
             case "save" ->{
                 boolean ok=s.save();
                 if(!ok){p.sendMessage("§cÉchec sauvegarde showcases.yml — consulte la console.");break;}
@@ -204,7 +205,7 @@ public final class MillionBlocksCommand implements TabExecutor {
             case "laser"->List.of("place","mount","fire","remove");case "progress"->List.of("get","set","add","reset");case "give"->giveSuggestions();case "world"->List.of("mining","survival");case "survival"->List.of("prepare","use","status");
             case "hub"->List.of("lock","edit","sky","island","schem","spawn");case "portal"->List.of("give","refresh","inspect","list","remove","exit","reload");
             case "hud"->List.of("mode","show","hide","toggle","pack","multiplier","reload","refresh","debug");
-            case "showcase"->List.of("line","circle","place","move","remove","clear","list","save","reload","respawn","repair");
+            case "showcase"->List.of("line","circle","place","move","remove","clear","list","save","reload","respawn","repair","diagnose");
             case "arena"->List.of("reset");case "reload"->List.of("all","config","showcases","portals","hud");default->List.of();},a[1]);
         if(a.length==3){return filter(switch(root){
             case "hub"-> switch(a[1]){case "lock"->List.of("on","off","toggle","status");case "edit"->List.of("on","off");case "sky"->List.of("create");case "island"->List.of("create");case "schem"->List.of("info","paste","cancel");case "spawn"->List.of("set");default->List.of();};

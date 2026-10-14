@@ -128,9 +128,10 @@ public final class DestructionService {
     public void deployCreeper(Player player) {
         if(blocked(player.getWorld()))return;
         if(!cooldown(player,"creeper",1200L))return;
-        Location target=aim(player,Math.min(100,plugin.getConfig().getInt("weapons.creeper.range",65)));
+        Location target=aim(player,Math.min(140,plugin.getConfig().getInt("weapons.creeper.range",100)));
         // The mining blast is plugin-controlled and therefore works even with mobGriefing=false.
         if(target.getBlock().getType().isSolid())target.add(0,1,0);
+        player.sendMessage("§aCreeper Miner ciblé à §f"+Math.round(target.distance(player.getEyeLocation()))+" §ablocs. §7Explosion dans 1,3s.");
         Creeper creeper=player.getWorld().spawn(target,Creeper.class);
         creeper.setPowered(true);
         creeper.setAI(false);
@@ -144,11 +145,11 @@ public final class DestructionService {
                 if(!creeper.isValid() || blocked(blast.getWorld())) {if(creeper.isValid())creeper.remove();cancel();return;}
                 blast.getWorld().spawnParticle(Particle.SMOKE,blast.clone().add(0,1.3,0),8,.4,.6,.4,.015);
                 if(ticks>=26){
-                    creeper.remove();
+                    if(creeper.isValid())creeper.remove();
                     blast.getWorld().playSound(blast,Sound.ENTITY_GENERIC_EXPLODE,1.5f,1.15f);
                     blast.getWorld().spawnParticle(Particle.EXPLOSION,blast,12,1.8,1.8,1.8,0);
-                    scheduleSphere(player,blast,Math.max(3,plugin.getConfig().getInt("weapons.creeper.radius",5)),
-                            1000,Math.max(500,plugin.getConfig().getInt("weapons.creeper.blocks-per-tick",800)), false);
+                    scheduleSphere(player,blast,Math.max(3,plugin.getConfig().getInt("weapons.creeper.radius",6)),
+                            2500,Math.max(500,plugin.getConfig().getInt("weapons.creeper.blocks-per-tick",800)), false);
                     cancel();
                 }
             }
@@ -237,10 +238,58 @@ public final class DestructionService {
         return 0;
     }
 
+    public String diagnostics(Player player){
+        ToolId held=plugin.getItemFactory().identify(player.getInventory().getItemInMainHand());
+        World world=player.getWorld();
+        Location target=aim(player,150);
+        return "§eWeapon debug: §7world=§f"+world.getName()+
+            " §7hub/blocked=§f"+blocked(world)+
+            " §7held=§f"+(held==null?"not a MillionBlocks weapon":held.configKey())+
+            " §7target=§f"+target.getBlockX()+","+target.getBlockY()+","+target.getBlockZ()+
+            " §7distance=§f"+Math.round(target.distance(player.getEyeLocation()))+
+            " §7chunkLoaded=§f"+world.isChunkLoaded(target.getBlockX()>>4,target.getBlockZ()>>4);
+    }
+    public void test(Player player,ToolId id){
+        if(blocked(player.getWorld())){
+            player.sendMessage("§cArmes désactivées dans ce hub. /mb world status pour vérifier les destinations.");
+            return;
+        }
+        switch(id){
+            case LASER -> {
+                // Explicit short pulse for command debugging; no fake held mouse state.
+                player.sendMessage("§eTest laser: utilise /mb give laser puis maintiens clic droit (un item V0.5 est insuffisant).");
+            }
+            case CREEPER_MINER ->deployCreeper(player);
+            case TNT_LAUNCHER ->launchTnt(player);
+            case DRILL ->drill(player);
+            case METEOR ->meteor(player);
+            case WORLD_EATER ->worldEater(player);
+            default ->player.sendMessage("§ePioche et marteau s'activent au cassage de blocs.");
+        }
+    }
+
     private Location aim(Player player,int range){
         RayTraceResult hit=player.rayTraceBlocks(range);
-        return hit!=null && hit.getHitPosition()!=null ? hit.getHitPosition().toLocation(player.getWorld())
-            : player.getEyeLocation().add(player.getEyeLocation().getDirection().normalize().multiply(range));
+        if(hit!=null && hit.getHitPosition()!=null)
+            return hit.getHitPosition().toLocation(player.getWorld());
+        // The normal raytrace only intersects loaded terrain. If no block is in
+        // view (sky/sea/unloaded distance), place the effect on visible terrain
+        // rather than silently triggering it in mid-air or an unloaded chunk.
+        World world=player.getWorld();
+        Location eye=player.getEyeLocation();
+        Vector direction=eye.getDirection().normalize();
+        Location last=eye.clone();
+        for(int step=4;step<=range;step+=4){
+            Location point=eye.clone().add(direction.clone().multiply(step));
+            if(!world.isChunkLoaded(point.getBlockX()>>4,point.getBlockZ()>>4))break;
+            last=point;
+        }
+        int y=last.getBlockY();
+        int surface=world.getHighestBlockYAt(last.getBlockX(),last.getBlockZ());
+        // Keep the requested altitude underground, but snap to the ground when
+        // pointing into the sky and no block was intersected.
+        if(y>surface || y<world.getMinHeight())y=surface+1;
+        return new Location(world,last.getX(),Math.max(world.getMinHeight()+1,Math.min(world.getMaxHeight()-1,y)),last.getZ());
     }
 
     private boolean cooldown(Player player,String name,long millis){

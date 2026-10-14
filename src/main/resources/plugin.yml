@@ -1,0 +1,20 @@
+name: MillionBlocks
+version: 0.5.1
+main: eu.reverie.millionblocks.MillionBlocksPlugin
+api-version: '26.2'
+authors: [Reverie]
+description: Progressive block-destruction challenge with cinematic tools, worlds, HUD and production showcases.
+
+commands:
+  millionblocks:
+    aliases: [mb, blocks]
+    description: Million Blocks gameplay and production/debug command.
+    usage: /mb help
+    permission: millionblocks.admin
+
+permissions:
+  millionblocks.admin:
+    description: Access to MillionBlocks production/debug commands.
+    default: op
+  millionblocks.play:
+    default: true

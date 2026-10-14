@@ -1,0 +1,25 @@
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+    - if: '$CI_PIPELINE_SOURCE == "api"'
+    - when: never
+
+stages:
+  - build
+
+build:
+  stage: build
+  image: maven:3.9.11-eclipse-temurin-25
+  cache:
+    key: maven
+    paths:
+      - .m2/repository/
+  variables:
+    MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  script:
+    - mvn --batch-mode --no-transfer-progress clean package
+  artifacts:
+    name: "MillionBlocks-$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA"
+    paths:
+      - target/MillionBlocks-*.jar
+    expire_in: 30 days

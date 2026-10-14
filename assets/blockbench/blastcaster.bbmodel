@@ -1,0 +1,1562 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "04 Blastcaster — TNT Launcher",
+  "model_identifier": "blastcaster",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "fût",
+      "from": [
+        5.5,
+        6.4,
+        3
+      ],
+      "to": [
+        10.5,
+        11.0,
+        14
+      ],
+      "uuid": "cbcf0533-d697-523b-bf29-d113eab1d551",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "bouche",
+      "from": [
+        4.4,
+        5.2,
+        1.2
+      ],
+      "to": [
+        11.6,
+        12.3,
+        3.5
+      ],
+      "uuid": "708ccc38-6fbb-5cb5-a005-28596ae57afa",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "anneau sortie",
+      "from": [
+        5.4,
+        6.2,
+        0.8
+      ],
+      "to": [
+        10.6,
+        11.3,
+        1.8
+      ],
+      "uuid": "4114568e-a2db-555e-9f4a-654f64de30f6",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "poignée",
+      "from": [
+        6.3,
+        2.0,
+        10.0
+      ],
+      "to": [
+        9.7,
+        7.5,
+        13.0
+      ],
+      "uuid": "f8416b2b-9329-571d-926a-17ac021ae2ac",
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "stock",
+      "from": [
+        5,
+        6.3,
+        13.8
+      ],
+      "to": [
+        11,
+        10.5,
+        15.8
+      ],
+      "uuid": "2a6ed38c-dd95-5baf-9078-f6dfb08051b8",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "rail de visée",
+      "from": [
+        6.6,
+        11.1,
+        5.1
+      ],
+      "to": [
+        9.4,
+        12.4,
+        12.1
+      ],
+      "uuid": "1c911c29-5f70-55c6-a7c4-0b7706dbfccd",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "charge tnt 0",
+      "from": [
+        10.5,
+        6.4,
+        6
+      ],
+      "to": [
+        13.1,
+        9.4,
+        8
+      ],
+      "uuid": "d2ae19c2-9c2c-53db-9455-968ab871c56a",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verrou",
+      "from": [
+        4.5,
+        5,
+        5
+      ],
+      "to": [
+        5.8,
+        7.3,
+        12
+      ],
+      "uuid": "372445a6-0e7a-53ae-a6ca-d58a23058d91",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "charge tnt 1",
+      "from": [
+        10.5,
+        6.4,
+        9.5
+      ],
+      "to": [
+        13.1,
+        9.4,
+        11.5
+      ],
+      "uuid": "f5128d3a-a874-57df-857e-d40a9a48effe",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verrou",
+      "from": [
+        4.5,
+        5,
+        5
+      ],
+      "to": [
+        5.8,
+        7.3,
+        12
+      ],
+      "uuid": "45d2e3d0-fa4b-51e1-8a8b-53c900b844eb",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "charge tnt 2",
+      "from": [
+        10.5,
+        6.4,
+        12
+      ],
+      "to": [
+        13.1,
+        9.4,
+        14
+      ],
+      "uuid": "76144444-4ad6-5ca5-bc2e-f65800628947",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            4,
+            12
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "verrou",
+      "from": [
+        4.5,
+        5,
+        5
+      ],
+      "to": [
+        5.8,
+        7.3,
+        12
+      ],
+      "uuid": "495d1806-0706-5f2c-8ef6-0b025b81cbe5",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "anneau canon 0",
+      "from": [
+        4.9,
+        6.1,
+        5
+      ],
+      "to": [
+        11.1,
+        10.9,
+        5.45
+      ],
+      "uuid": "d727f9da-64b8-5d33-b543-6b2f8f1b8b3f",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "voyant danger 0",
+      "from": [
+        9,
+        11,
+        5
+      ],
+      "to": [
+        10,
+        12.1,
+        6
+      ],
+      "uuid": "3d832880-7037-578f-991c-70244d4cdca8",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "anneau canon 1",
+      "from": [
+        4.9,
+        6.1,
+        7
+      ],
+      "to": [
+        11.1,
+        10.9,
+        7.45
+      ],
+      "uuid": "133ea3b8-cf51-52f4-b63c-062c67e45513",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "anneau canon 2",
+      "from": [
+        4.9,
+        6.1,
+        9
+      ],
+      "to": [
+        11.1,
+        10.9,
+        9.45
+      ],
+      "uuid": "cf629ce4-0f27-5e86-b334-96e7352812cb",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "voyant danger 2",
+      "from": [
+        9,
+        11,
+        9
+      ],
+      "to": [
+        10,
+        12.1,
+        10
+      ],
+      "uuid": "0644135c-7a85-5ce1-9c70-2d6fe2844b00",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "anneau canon 3",
+      "from": [
+        4.9,
+        6.1,
+        11
+      ],
+      "to": [
+        11.1,
+        10.9,
+        11.45
+      ],
+      "uuid": "b6d05c88-a97e-5d4b-a766-d8482c5e2f28",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "anneau canon 4",
+      "from": [
+        4.9,
+        6.1,
+        13
+      ],
+      "to": [
+        11.1,
+        10.9,
+        13.45
+      ],
+      "uuid": "81ee0a7e-b4f1-52fd-bc7e-f9fd3f3719f0",
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            4,
+            8,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "name": "voyant danger 4",
+      "from": [
+        9,
+        11,
+        13
+      ],
+      "to": [
+        10,
+        12.1,
+        14
+      ],
+      "uuid": "bb7807c8-7516-544b-9c49-4261bc4da090",
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "outliner": [
+    "cbcf0533-d697-523b-bf29-d113eab1d551",
+    "708ccc38-6fbb-5cb5-a005-28596ae57afa",
+    "4114568e-a2db-555e-9f4a-654f64de30f6",
+    "f8416b2b-9329-571d-926a-17ac021ae2ac",
+    "2a6ed38c-dd95-5baf-9078-f6dfb08051b8",
+    "1c911c29-5f70-55c6-a7c4-0b7706dbfccd",
+    "d2ae19c2-9c2c-53db-9455-968ab871c56a",
+    "372445a6-0e7a-53ae-a6ca-d58a23058d91",
+    "f5128d3a-a874-57df-857e-d40a9a48effe",
+    "45d2e3d0-fa4b-51e1-8a8b-53c900b844eb",
+    "76144444-4ad6-5ca5-bc2e-f65800628947",
+    "495d1806-0706-5f2c-8ef6-0b025b81cbe5",
+    "d727f9da-64b8-5d33-b543-6b2f8f1b8b3f",
+    "3d832880-7037-578f-991c-70244d4cdca8",
+    "133ea3b8-cf51-52f4-b63c-062c67e45513",
+    "cf629ce4-0f27-5e86-b334-96e7352812cb",
+    "0644135c-7a85-5ce1-9c70-2d6fe2844b00",
+    "b6d05c88-a97e-5d4b-a766-d8482c5e2f28",
+    "81ee0a7e-b4f1-52fd-bc7e-f9fd3f3719f0",
+    "bb7807c8-7516-544b-9c49-4261bc4da090"
+  ],
+  "textures": [
+    {
+      "path": "blastcaster.png",
+      "name": "blastcaster.png",
+      "id": "0",
+      "namespace": "millionblocks",
+      "particle": false,
+      "render_mode": "default",
+      "visible": true,
+      "saved": true,
+      "uuid": "28694e72-3d60-5020-ac87-bf528db82ca6",
+      "source": "data:image/png;base64,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"
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -40
+      ],
+      "translation": [
+        0,
+        2,
+        1
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        70,
+        15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -70,
+        -15
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    },
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ]
+    }
+  }
+}

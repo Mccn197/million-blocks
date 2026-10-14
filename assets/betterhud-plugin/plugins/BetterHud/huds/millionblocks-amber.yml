@@ -1,0 +1,10 @@
+mb_amber:
+  layouts:
+    1:
+      name: mb_amber_layout
+      gui:
+        x: 0
+        y: 42
+      pixel:
+        x: 42
+        y: 0

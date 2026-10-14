@@ -1,0 +1,34 @@
+# Preview layout - PAPI expansion is NOT installed in V0.5.1.
+mb_amber_layout:
+  images:
+    1:
+      name: mb_amber_panel
+      x: 0
+      y: 0
+    2:
+      name: mb_amber_pickaxe
+      x: -28
+      y: -13
+    3:
+      name: mb_amber_block
+      x: 0
+      y: 0
+    4:
+      name: mb_crack_0
+      x: 8
+      y: 8
+  texts:
+    1:
+      name: mb_font
+      pattern: "[millionblocks_count]"
+      x: 240
+      y: 15
+      align: right
+      outline: true
+      scale: 1
+    2:
+      name: mb_font
+      pattern: "<#ffca31>x[millionblocks_multiplier]"
+      x: -20
+      y: -17
+      align: right

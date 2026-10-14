@@ -1,0 +1,40 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "millionblocks:font/pickaxe.png",
+      "ascent": 38,
+      "height": 48,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "millionblocks:font/block.png",
+      "ascent": 38,
+      "height": 48,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "millionblocks:font/panel_cyan.png",
+      "ascent": 36,
+      "height": 46,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "millionblocks:font/panel_amber.png",
+      "ascent": 36,
+      "height": 46,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}

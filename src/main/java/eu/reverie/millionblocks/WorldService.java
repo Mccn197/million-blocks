@@ -80,6 +80,50 @@ public final class WorldService {
         survivalReturns.clear();
     }
 
+    public void selectHubHere(Player player) {
+        World here=player.getWorld();
+        if(here.getName().equalsIgnoreCase(survivalName()))
+            throw new IllegalArgumentException("Le hub ne peut pas être la Survival active.");
+        // Select the existing world; never generate, paste or move any world data.
+        plugin.getConfig().set("world-system.mining-spawn.name",here.getName());
+        plugin.getConfig().set("hub.sky-world-name",here.getName());
+        // The player's feet must be on a safe floor.
+        Location destination=player.getLocation().clone();
+        if(!isSafe(destination))throw new IllegalArgumentException("Position non sécurisée. Place-toi sur un sol solide (2 blocs d'air).");
+        String path="world-system.mining-spawn.spawn.";
+        plugin.getConfig().set(path+"x",destination.getX());
+        plugin.getConfig().set(path+"y",destination.getY());
+        plugin.getConfig().set(path+"z",destination.getZ());
+        plugin.getConfig().set(path+"yaw",(double)destination.getYaw());
+        plugin.getConfig().set(path+"pitch",(double)destination.getPitch());
+        plugin.saveConfig();
+    }
+    public void selectSurvivalHere(Player player) {
+        World here=player.getWorld();
+        if(isHub(here)||here.getName().equalsIgnoreCase("mining_spawn")||here.getName().equalsIgnoreCase("mining_sky"))
+            throw new IllegalArgumentException("Ce monde est un hub ; impossible de le choisir comme Survival.");
+        plugin.getConfig().set("world-system.survival.name",here.getName());
+        plugin.saveConfig();
+        survivalReturns.clear();
+        // Persist the preferred arrival on disk, not just in the current session.
+        if(isSafe(player.getLocation())){
+            Location loc=player.getLocation();
+            String path="world-system.survival.spawn.";
+            plugin.getConfig().set(path+"world",here.getName());
+            plugin.getConfig().set(path+"x",loc.getX());
+            plugin.getConfig().set(path+"y",loc.getY());
+            plugin.getConfig().set(path+"z",loc.getZ());
+            plugin.getConfig().set(path+"yaw",(double)loc.getYaw());
+            plugin.getConfig().set(path+"pitch",(double)loc.getPitch());
+            plugin.saveConfig();
+            survivalReturns.put(player.getUniqueId(),loc.clone());
+        }
+    }
+    public String destinations() {
+        return "§eHub: §b"+hubName()+" §7("+((Bukkit.getWorld(hubName())!=null)?"chargé":"non chargé")+")"+
+            " §eSurvival: §a"+survivalName()+" §7("+((Bukkit.getWorld(survivalName())!=null)?"chargé":"non chargé")+")";
+    }
+
     public String hubName() { return plugin.getConfig().getString("world-system.mining-spawn.name", "mining_spawn"); }
     public String survivalName() { return plugin.getConfig().getString("world-system.survival.name", "survival"); }
     public boolean isHub(World world) { return world != null && world.getName().equalsIgnoreCase(hubName()); }
@@ -117,17 +161,27 @@ public final class WorldService {
     public void teleportHub(Player player) {
         World world = Bukkit.getWorld(hubName());
         if (world == null) {player.sendMessage("§cHub introuvable.");return;}
-        if (!isHub(player.getWorld())) survivalReturns.put(player.getUniqueId(),player.getLocation().clone());
         Location spawn = hubSpawn(world);
-        if (!isSafe(spawn)) { player.sendMessage("§cLe spawn du hub n'est pas sécurisé. /mb hub spawn set sur une plateforme existante.");return; }
+        if (!isSafe(spawn)) { player.sendMessage("§cSpawn invalide dans §e"+hubName()+"§c. Sur la plateforme, tape /mb world set hub here.");return; }
+        if (!isHub(player.getWorld()) && player.getWorld().getName().equalsIgnoreCase(survivalName()))
+            survivalReturns.put(player.getUniqueId(),player.getLocation().clone());
         safeTeleport(player,spawn);
     }
     public void teleportSurvival(Player player) {
         World world = Bukkit.getWorld(survivalName());
         if (world == null) { player.sendMessage("§cSurvival introuvable."); return; }
         Location remembered = survivalReturns.get(player.getUniqueId());
+        String path="world-system.survival.spawn.";
+        Location saved=null;
+        if(world.getName().equalsIgnoreCase(plugin.getConfig().getString(path+"world",""))){
+            saved=new Location(world,plugin.getConfig().getDouble(path+"x"),
+                plugin.getConfig().getDouble(path+"y"),plugin.getConfig().getDouble(path+"z"),
+                (float)plugin.getConfig().getDouble(path+"yaw"),(float)plugin.getConfig().getDouble(path+"pitch"));
+        }
         Location target = remembered != null && remembered.getWorld() == world && isSafe(remembered) ? remembered
+                : saved!=null && isSafe(saved)?saved
                 : new Location(world,0.5,Math.max(world.getMinHeight()+3,world.getHighestBlockYAt(0,0)+1),0.5);
+        if(!isSafe(target)){player.sendMessage("§cPoint de retour Survival dangereux dans "+survivalName()+" ; TP annulé.");return;}
         safeTeleport(player,target);
     }
     public void teleportReward(Player player) {

@@ -88,3 +88,12 @@ format 88, refuse tout conflit de ressource différent, les ZIP à chemins dange
 fichier de sortie existant. Il ne résout pas automatiquement les conflits de fonts/shaders
 avec d'autres plugins. Ses tests utilisent des packs factices ; aucun pack généré NitroServ
 n'a été disponible pendant cette session.
+
+## Correction position HUD (pack serveur)
+- Les images BetterHud sont centrées sur leur coordonnée et le panneau Amber fait 255 px de large.
+  Avec le décalage ancien x=20 et une image à x=52, une grande partie du panneau
+  se retrouvait hors écran ; la version corrigée décale le layout entier vers la droite.
+- Désactivez le HUD et la boussole de démonstration dans \`plugins/BetterHud/config.yml\` :
+  \`default-hud: []\` et \`default-compass: []\` (conservez les autres HUD utiles du serveur).
+- Copiez le YAML correctif, exécutez \`/hud reload\`, puis rechargez le pack généré.
+  Le resource pack client seul ne peut pas réparer un positionnement calculé côté serveur.

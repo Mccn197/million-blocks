@@ -8,7 +8,7 @@ import java.util.*;
 public final class MillionBlocksCommand implements TabExecutor {
     private final MillionBlocksPlugin plugin;
     public MillionBlocksCommand(MillionBlocksPlugin plugin){this.plugin=plugin;}
-    private static final List<String> ROOT=List.of("help","info","laser","progress","give","world","survival","hub","portal","hud","showcase","victory","arena","reload");
+    private static final List<String> ROOT=List.of("help","info","laser","weapon","progress","give","world","survival","hub","portal","hud","showcase","victory","arena","reload");
     @Override public boolean onCommand(CommandSender sender,Command command,String alias,String[] args){
         if(!(sender instanceof Player p)){sender.sendMessage("Use /mb from an in-game OP account.");return true;}
         try{
@@ -25,6 +25,7 @@ public final class MillionBlocksCommand implements TabExecutor {
                 case "portal" -> portal(p,args);
                 case "hud" -> hud(p,args);
                 case "laser" -> laser(p,args);
+                case "weapon" -> weapon(p,args);
                 case "showcase" -> showcase(p,args);
                 case "victory" -> plugin.triggerVictory(p,true);
                 case "arena" -> {require(args,2,"/mb arena reset");int blocks=plugin.getArenaService().reset();p.sendMessage("§aArena reset: "+blocks);}
@@ -54,9 +55,24 @@ public final class MillionBlocksCommand implements TabExecutor {
     private void giveStack(Player p,ItemStack item){Map<Integer,ItemStack> overflow=p.getInventory().addItem(item);
         for(ItemStack remain:overflow.values())p.getWorld().dropItemNaturally(p.getLocation(),remain);
     }
-    private void world(Player p,String[] a){require(a,2,"/mb world mining|survival");
-        switch(a[1]){case "mining","hub" -> plugin.getWorldService().teleportHub(p);case "survival" -> plugin.getWorldService().teleportSurvival(p);
-            default ->throw new IllegalArgumentException("mining|survival");}
+    private void world(Player p,String[] a){
+        WorldService service=plugin.getWorldService();
+        String cmd=a.length>1?a[1].toLowerCase(Locale.ROOT):"status";
+        switch(cmd){
+            case "mining","hub" -> service.teleportHub(p);
+            case "survival" -> service.teleportSurvival(p);
+            case "status" ->p.sendMessage(service.destinations());
+            case "set" ->{
+                require(a,4,"/mb world set hub|survival here");
+                if(!a[3].equalsIgnoreCase("here"))throw new IllegalArgumentException("Utilise 'here' depuis le bon monde.");
+                if(!p.hasPermission("millionblocks.admin"))throw new IllegalArgumentException("Permission admin requise.");
+                if(a[2].equalsIgnoreCase("hub"))service.selectHubHere(p);
+                else if(a[2].equalsIgnoreCase("survival"))service.selectSurvivalHere(p);
+                else throw new IllegalArgumentException("hub|survival");
+                p.sendMessage("§aDestinations mises à jour: "+service.destinations());
+            }
+            default ->throw new IllegalArgumentException("status|mining|survival|set hub here|set survival here");
+        }
     }
     private void survival(Player p,String[] a) {
         String op=a.length>=2?a[1]:"status";
@@ -118,6 +134,18 @@ public final class MillionBlocksCommand implements TabExecutor {
             default ->throw new IllegalArgumentException("give|refresh|inspect|list|remove|exit create|reload");
         }
     }
+    private void weapon(Player p,String[] a) {
+        require(a,2,"/mb weapon debug|test <weapon>");
+        switch(a[1].toLowerCase(Locale.ROOT)){
+            case "debug" ->p.sendMessage(plugin.getDestructionService().diagnostics(p));
+            case "test" ->{
+                require(a,3,"/mb weapon test creeper_miner|tnt_launcher|meteor|world_eater|drill|laser");
+                plugin.getDestructionService().test(p,ToolId.parse(a[2]));
+            }
+            default ->throw new IllegalArgumentException("debug|test <weapon>");
+        }
+    }
+
     private void laser(Player p,String[] a) {
         require(a,2,"/mb laser place|mount|fire on|fire off|remove");
         switch(a[1].toLowerCase(Locale.ROOT)) {
@@ -150,6 +178,14 @@ public final class MillionBlocksCommand implements TabExecutor {
             case "circle" ->p.sendMessage("§aCercle: "+s.createCircle(p,a.length>=3?Double.parseDouble(a[2]):8.0));
             case "line" ->p.sendMessage("§aLigne: "+s.createLine(p,a.length>=3?Double.parseDouble(a[2]):3.0));
             case "place" ->{require(a,3,"/mb showcase place <tool>");p.sendMessage("§aShowcase: "+s.place(p,ToolId.parse(a[2])));}
+            case "size" ->{
+                require(a,4,"/mb showcase size <id|nearest|all> <0.25..12>");
+                double scale=Double.parseDouble(a[3]);
+                List<String> resized=s.resize(a[2],p,scale);
+                if(resized.isEmpty()){p.sendMessage("§cAucun showcase trouvé (vérifie le monde et l'ID).");break;}
+                if(!s.save())p.sendMessage("§cTaille appliquée en jeu mais erreur de sauvegarde YAML.");
+                else p.sendMessage("§aTaille §e×"+scale+" §aenregistrée pour "+resized.size()+" stand(s): §7"+resized);
+            }
             case "move" ->{require(a,3,"/mb showcase move <id|nearest>");
                 String moved=s.move(a[2],p);
                 if(moved==null){p.sendMessage("§cAucun showcase à déplacer.");break;}
@@ -157,7 +193,8 @@ public final class MillionBlocksCommand implements TabExecutor {
                 p.sendMessage((saved?"§aDéplacé et sauvegardé: ":"§cDéplacé mais sauvegarde échouée: ")+s.fullDetails(moved));}
             case "remove" ->{require(a,3,"/mb showcase remove nearest [radius]|id");p.sendMessage("§aSupprimé: "+(a[2].equals("nearest")?s.removeNearest(p,a.length>=4?Double.parseDouble(a[3]):8.0):s.remove(a[2])));}
             case "clear" ->p.sendMessage("§aSupprimés: "+s.clear());
-            case "list" ->{p.sendMessage("§eShowcases: "+s.ids().size());s.describe().stream().limit(30).forEach(p::sendMessage);}
+            case "list" ->{p.sendMessage("§eShowcases: "+s.ids().size()+" (dont "+s.deferredCount()+" en attente de monde)");s.describe().stream().limit(30).forEach(p::sendMessage);}
+            case "diagnose" ->p.sendMessage(s.diagnostic());
             case "save" ->{
                 boolean ok=s.save();
                 if(!ok){p.sendMessage("§cÉchec sauvegarde showcases.yml — consulte la console.");break;}
@@ -180,7 +217,7 @@ public final class MillionBlocksCommand implements TabExecutor {
     }
     private void require(String[] a,int n,String usage){if(a.length<n)throw new IllegalArgumentException(usage);}
     private void help(Player p){
-        p.sendMessage("§6§lMillionBlocks V0.6 §7— commandes OP / TAB");
+        p.sendMessage("§6§lMillionBlocks V0.6.2 §7— commandes OP / TAB");
         p.sendMessage("§e/mb hub sky create §7— crée le monde céleste indépendant");
         p.sendMessage("§e/mb hub island create 55 confirm §7— socle rocheux flottant");
         p.sendMessage("§e/mb hub schem info|paste confirm|cancel §7— ton .schem");
@@ -193,26 +230,35 @@ public final class MillionBlocksCommand implements TabExecutor {
         p.sendMessage("§e/mb hud toggle goal|percent|multiplier|icon");
         p.sendMessage("§e/mb hud pack on|off §7— glyphes resource pack");
         p.sendMessage("§e/mb laser place|mount|fire on|fire off|remove §7— REDLINE pilotable");
+        p.sendMessage("§e/mb weapon debug|test creeper_miner §7— test des tirs à distance");
         p.sendMessage("§e/mb hud debug §7— diagnostic visibilité HUD");
         p.sendMessage("§e/mb give all §7/ §e/mb progress set 990000 §7/ §e/mb victory");
+        p.sendMessage("§e/mb world status|set hub here|set survival here §7— destinations des portails");
+        p.sendMessage("§e/mb showcase size nearest|sc-001|all 5 §7— modèles géants");
         p.sendMessage("§e/mb world mining|survival §7/ §e/mb reload all");
         p.sendMessage("§e/mb survival prepare|status|use new|use old §7— nouvelle seed sans effacer l'ancienne");
     }
     @Override public List<String> onTabComplete(CommandSender sender,Command command,String label,String[] a){
         if(a.length==1)return filter(ROOT,a[0]);String root=a[0].toLowerCase(Locale.ROOT);
         if(a.length==2)return filter(switch(root){
-            case "laser"->List.of("place","mount","fire","remove");case "progress"->List.of("get","set","add","reset");case "give"->giveSuggestions();case "world"->List.of("mining","survival");case "survival"->List.of("prepare","use","status");
-            case "hub"->List.of("lock","edit","sky","island","schem","spawn");case "portal"->List.of("give","refresh","inspect","list","remove","exit","reload");
+            case "laser"->List.of("place","mount","fire","remove");case "progress"->List.of("get","set","add","reset");case "give"->giveSuggestions();case "world"->List.of("mining","survival","status","set");case "survival"->List.of("prepare","use","status");
+            case "hub"->List.of("lock","edit","sky","island","schem","spawn");case "portal"->List.of("give","refresh","inspect","list","remove","exit","reload");case "weapon"->List.of("debug","test");
             case "hud"->List.of("mode","show","hide","toggle","pack","multiplier","reload","refresh","debug");
-            case "showcase"->List.of("line","circle","place","move","remove","clear","list","save","reload","respawn","repair");
+            case "showcase"->List.of("line","circle","place","move","size","remove","clear","list","save","reload","respawn","repair","diagnose");
             case "arena"->List.of("reset");case "reload"->List.of("all","config","showcases","portals","hud");default->List.of();},a[1]);
         if(a.length==3){return filter(switch(root){
             case "hub"-> switch(a[1]){case "lock"->List.of("on","off","toggle","status");case "edit"->List.of("on","off");case "sky"->List.of("create");case "island"->List.of("create");case "schem"->List.of("info","paste","cancel");case "spawn"->List.of("set");default->List.of();};
             case "portal"->switch(a[1]){case "remove"->List.of("nearest","all");case "exit"->List.of("create");default->List.of();};
             case "hud"->switch(a[1]){case "mode"->List.of("betterhud","custom","bossbar","off");case "toggle"->List.of("goal","percent","multiplier","icon");case "pack"->List.of("on","off");case "multiplier"->List.of("1","2");default->List.of();};
-            case "showcase"->switch(a[1]){case "place"->tools();case "remove"->plugin.getShowcaseService().ids();case "move"-> {List<String> l=new ArrayList<>(List.of("nearest"));l.addAll(plugin.getShowcaseService().ids());yield l;}case "circle"->List.of("6","8","10","12");case "line"->List.of("2","3","4");default->List.of();};
-            case "laser"->List.of("on","off");case "survival"->List.of("new","old");case "give"->tools();case "progress"->List.of("1000","325000","800000","990000","1000000");default->List.of();},a[2]);}
-        if(a.length==4){if(root.equals("hub")&&a[1].equals("schem")&&a[2].equals("paste"))return filter(List.of("confirm"),a[3]);
+            case "showcase"->switch(a[1]){case "place"->tools();case "remove"->plugin.getShowcaseService().ids();case "size"-> {
+                List<String> l=new ArrayList<>(List.of("nearest","all"));l.addAll(plugin.getShowcaseService().ids());yield l;
+            }case "move"-> {List<String> l=new ArrayList<>(List.of("nearest"));l.addAll(plugin.getShowcaseService().ids());yield l;}case "circle"->List.of("6","8","10","12");case "line"->List.of("2","3","4");default->List.of();};
+            case "laser"->List.of("on","off");case "weapon"->a[1].equals("test")?tools():List.of();
+            case "world"->a[1].equals("set")?List.of("hub","survival"):List.of();
+            case "survival"->List.of("new","old");case "give"->tools();case "progress"->List.of("1000","325000","800000","990000","1000000");default->List.of();},a[2]);}
+        if(a.length==4){if(root.equals("world")&&a[1].equals("set"))return filter(List.of("here"),a[3]);
+            if(root.equals("showcase")&&a[1].equals("size"))return filter(List.of("0.5","1","2","3","5","8","12"),a[3]);
+            if(root.equals("hub")&&a[1].equals("schem")&&a[2].equals("paste"))return filter(List.of("confirm"),a[3]);
             if(root.equals("hub")&&a[1].equals("island"))return filter(List.of("55","60","70","90"),a[3]);
             if(root.equals("portal")&&a[1].equals("remove")&&a[2].equals("all"))return filter(List.of("confirm"),a[3]);}
         if(a.length==5&&root.equals("hub")&&a[1].equals("island"))return filter(List.of("confirm"),a[4]);

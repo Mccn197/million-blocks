@@ -1,0 +1,21 @@
+test_all_json_yaml_and_png_parse (test_assets.AssetTests.test_all_json_yaml_and_png_parse) ... ok
+test_animation_rigs_reference_real_editable_bones (test_assets.AssetTests.test_animation_rigs_reference_real_editable_bones) ... ok
+test_betterhud_references_placeholders_and_condition_types (test_assets.AssetTests.test_betterhud_references_placeholders_and_condition_types) ... ok
+test_editable_models_and_exports_agree (test_assets.AssetTests.test_editable_models_and_exports_agree) ... ok
+test_font_textures_and_unicode_cells_resolve (test_assets.AssetTests.test_font_textures_and_unicode_cells_resolve) ... ok
+test_modern_item_models_and_texture_references_resolve (test_assets.AssetTests.test_modern_item_models_and_texture_references_resolve) ... ok
+test_pack_targets_minecraft_26_2 (test_assets.AssetTests.test_pack_targets_minecraft_26_2) ... ok
+test_conflicting_resources_are_refused (test_pack_merge.PackMergeTests.test_conflicting_resources_are_refused) ... ok
+test_preserves_betterhud_shaders_metadata_and_item_files (test_pack_merge.PackMergeTests.test_preserves_betterhud_shaders_metadata_and_item_files) ... ok
+test_wrong_format_and_path_traversal_are_refused (test_pack_merge.PackMergeTests.test_wrong_format_and_path_traversal_are_refused) ... ok
+test_cli_requires_confirmation (test_world_snapshot.SnapshotTests.test_cli_requires_confirmation) ... ok
+test_existing_backup_refused (test_world_snapshot.SnapshotTests.test_existing_backup_refused) ... ok
+test_loaded_world_lock_refused (test_world_snapshot.SnapshotTests.test_loaded_world_lock_refused) ... ok
+test_roundtrip_preserves_destroyed_world (test_world_snapshot.SnapshotTests.test_roundtrip_preserves_destroyed_world) ... ok
+test_symlink_refused (test_world_snapshot.SnapshotTests.test_symlink_refused) ... ok
+test_tamper_refused_without_changing_world (test_world_snapshot.SnapshotTests.test_tamper_refused_without_changing_world) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.096s
+
+OK

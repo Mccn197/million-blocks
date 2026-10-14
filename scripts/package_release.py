@@ -2,6 +2,8 @@
 """Package the compiled candidate and validated asset/config sources, without deployment."""
 import hashlib
 import json
+import re
+import xml.etree.ElementTree as E
 from pathlib import Path
 import shutil
 import struct
@@ -46,12 +48,23 @@ def main():
     sourcezip=DIST/'MillionBlocks-sources-0.6.0.zip'
     paths=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode().split('\0')
     archive(sourcezip,[(ROOT/p,p) for p in paths if p])
+    reports=list((ROOT/'target/surefire-reports').glob('TEST-*.xml'))
+    assert reports,'Missing current Java test reports'
+    suites=[E.parse(p).getroot() for p in reports]
+    java_tests=sum(int(s.attrib['tests']) for s in suites)
+    failures=sum(int(s.attrib.get(k,0)) for s in suites for k in ['failures','errors'])
+    skipped=sum(int(s.attrib.get('skipped',0)) for s in suites)
+    assert java_tests>0 and failures==0 and skipped==0,'Java tests not fully passed'
+    python_log=(ROOT/'docs/validation/python-tests.log').read_text()
+    match=re.search(r'Ran (\d+) tests',python_log)
+    assert match and re.search(r'\nOK\s*$',python_log),'Python test completion missing'
+    python_tests=int(match.group(1))
     provenance={'version':'0.6.0','git_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),
         'java':'Temurin 25.0.2+10','maven':'3.9.11','paper_api':api,
         'official_paper_source_commit':'58e6e45d67c998909581f9079189ef51eb6f1267' if suffix else None,
         'exact_paper_build_121_validated':not bool(suffix),'server_started':False,'minecraft_client_tested':False,
         'nitroserv_accessed':False,'reveriemc_accessed':False,'remote_pipeline_triggered':False,
-        'java_tests':8,'python_tests':16,'tests_failed':0,'tests_skipped':0,
+        'java_tests':java_tests,'python_tests':python_tests,'tests_failed':failures,'tests_skipped':skipped,
         'betterhud_validation':'2.1.0 public source API/config contract inspected; installed server version and generated shader pack not validated',
         'jar_sha256':hashlib.sha256(shipped.read_bytes()).hexdigest()}
     (DIST/'build-provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')

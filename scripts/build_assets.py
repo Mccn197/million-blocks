@@ -50,8 +50,20 @@ def atlas(name, accent):
  for start in range(-16,24,8):
   draw.polygon([(start,32),(start+4,32),(start+20,48),(start+16,48)],fill='#10151c')
  draw.rectangle((16,32,47,47),fill='#242a33')
- draw.text((17,33),'KEEP',fill='#ffce52');draw.text((17,40),'OUT',fill='#fff0ba')
- draw.text((16,49),'DANGER',fill='#ff664d')
+ glyphs={
+  'K':['101','110','100','110','101'],'E':['111','100','110','100','111'],
+  'P':['110','101','110','100','100'],'O':['111','101','101','101','111'],
+  'U':['101','101','101','101','111'],'T':['111','010','010','010','010'],
+  'D':['110','101','101','101','110'],'A':['010','101','111','101','101'],
+  'N':['101','111','111','111','101'],'G':['111','100','101','101','111'],
+  'R':['110','101','110','101','101']}
+ def lettering(text,x,y,color):
+  for i,char in enumerate(text):
+   for row,pixels in enumerate(glyphs[char]):
+    for col,pixel in enumerate(pixels):
+     if pixel=='1':draw.point((x+i*4+col,y+row),fill=color)
+ lettering('KEEP',18,34,'#ffce52');lettering('OUT',18,41,'#fff0ba')
+ lettering('DANGER',18,50,'#ff664d')
  for y in range(34,47,3):draw.line((50,y,62,y),fill='#10131a',width=2)
  # Cutout portal energy lattice; transparent holes keep the frame open.
  for y in range(49,64,5):draw.line((0,y,15,y),fill=accent,width=1)

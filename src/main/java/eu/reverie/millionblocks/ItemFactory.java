@@ -65,7 +65,7 @@ public final class ItemFactory {
             || id == ToolId.DRILL || id == ToolId.METEOR || id == ToolId.WORLD_EATER) {
             stack.setData(DataComponentTypes.CONSUMABLE, Consumable.consumable()
                 .consumeSeconds(3600.0f)
-                .animation(ItemUseAnimation.NONE)
+                .animation(ItemUseAnimation.BOW)
                 .hasConsumeParticles(false));
         }
         return stack;
@@ -153,6 +153,19 @@ public final class ItemFactory {
         return plugin.legacy(section == null ? id.name() : section.getString("name", id.name()));
     }
 
+    public static String cleanDisplayName(ToolId id) {
+        return switch(id){
+            case SUPER_PICKAXE -> "Super Pickaxe";
+            case MINING_HAMMER -> "Mining Hammer";
+            case CREEPER_MINER -> "Creeper Miner";
+            case TNT_LAUNCHER -> "TNT Launcher";
+            case DRILL -> "Mining Drill";
+            case LASER -> "Mining Laser";
+            case METEOR -> "Meteor Strike";
+            case WORLD_EATER -> "World Eater";
+            default -> "Item";
+        };
+    }
     public static String modelId(ToolId id) {
         return switch(id) {
             case SUPER_PICKAXE -> "prismbreaker"; case MINING_HAMMER -> "quakehammer";

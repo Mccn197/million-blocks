@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>eu.reverie</groupId>
   <artifactId>million-blocks</artifactId>
-  <version>0.6.0</version>
+  <version>0.7.0</version>
   <name>Million Blocks</name>
   <description>Reverie Minecraft concept plugin for a progressive block-destruction video challenge.</description>
 

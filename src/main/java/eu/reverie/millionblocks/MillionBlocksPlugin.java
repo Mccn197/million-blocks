@@ -21,6 +21,8 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     private ArenaService arenaService;
     private WorldService worldService;
     private HudService hudService;
+    private RemoteAimService aimService;
+    private UnlockService unlockService;
     private ShowcaseService showcaseService;
     private PortalService portalService;
     private SchematicService schematicService;
@@ -37,6 +39,8 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         this.debrisService = new DebrisService(this);
         this.arenaService = new ArenaService(this);
         this.worldService = new WorldService(this);
+        this.aimService = new RemoteAimService(this);
+        this.unlockService = new UnlockService(this);
         this.hudService = new HudService(this);
         this.showcaseService = new ShowcaseService(this);
         this.portalService = new PortalService(this);
@@ -74,7 +78,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         refreshRuntimeConfig();
         if (showcaseService != null) showcaseService.reload();
         if (portalService != null) portalService.load();
-        if (hudService != null) hudService.reload();
+        if (hudService != null) {hudService.connect();hudService.reload();}
     }
 
     public void refreshRuntimeConfig() {
@@ -86,6 +90,13 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         long after = progressService.set(player, HudState.addSaturated(before, amount, hudService.multiplier()));
         if (amount > 0 && hudService != null) hudService.mined(player);
         if (hudService != null) hudService.update(player);
+        var unlocked = unlockService.reached(before, after);
+        if (!unlocked.isEmpty()) {
+            ToolId newest=unlocked.get(unlocked.size()-1);
+            player.sendTitle("§6§lNOUVEL ITEM DÉBLOQUÉ !", "§e"+ItemFactory.cleanDisplayName(newest), 10, 65, 20);
+            player.sendMessage("§a✓ Débloqué : §e"+ItemFactory.cleanDisplayName(newest)+" §7— récupère-le au musée !");
+            player.playSound(player.getLocation(), org.bukkit.Sound.UI_TOAST_CHALLENGE_COMPLETE, 0.9f, 1.2f);
+        }
         long target = getTargetBlocks();
         if (before < target && after >= target) triggerVictory(player, false);
     }
@@ -172,6 +183,8 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     public DebrisService getDebrisService() { return debrisService; }
     public ArenaService getArenaService() { return arenaService; }
     public WorldService getWorldService() { return worldService; }
+    public RemoteAimService getAimService() { return aimService; }
+    public UnlockService getUnlockService() { return unlockService; }
     public HudService getHudService() { return hudService; }
     public ShowcaseService getShowcaseService() { return showcaseService; }
     public PortalService getPortalService() { return portalService; }

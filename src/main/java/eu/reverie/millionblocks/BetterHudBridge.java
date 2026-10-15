@@ -36,6 +36,12 @@ public final class BetterHudBridge {
             Object placeholders = manager("Placeholder");
             register(placeholders, "String", "millionblocks_count", s -> s.countText());
             register(placeholders, "String", "millionblocks_goal", s -> s.goalText());
+            register(placeholders, "Number", "millionblocks_progress_frame", s -> s.progressFrame());
+            register(placeholders, "Number", "millionblocks_unlock_frame", s -> s.unlockFrame());
+            register(placeholders, "Number", "millionblocks_unlock_percent", s -> s.stagePercent());
+            register(placeholders, "String", "millionblocks_unlock_progress", s -> s.unlockText());
+            register(placeholders, "String", "millionblocks_next_name", s -> s.nextItemText());
+            register(placeholders, "String", "millionblocks_next_id", s -> s.nextItemId());
             register(placeholders, "String", "millionblocks_percent", s -> s.percentText());
             register(placeholders, "String", "millionblocks_multiplier", s -> s.multiplierText());
             register(placeholders, "Boolean", "millionblocks_visible", HudState::visible);

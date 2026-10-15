@@ -45,7 +45,7 @@ public final class GameplayListener implements Listener {
         if (plugin.getConfig().getBoolean("portal.auto-give-item", true)) plugin.getItemFactory().ensureTravelPortal(player);
         plugin.getHudService().show(player);
         org.bukkit.Bukkit.getScheduler().runTaskLater(plugin,
-            () -> {if(player.isOnline()){plugin.getShowcaseService().repairNear(player);
+            () -> {if(player.isOnline()){plugin.getShowcaseService().resolveWorld(player.getWorld()); plugin.getShowcaseService().repairNear(player);
                 plugin.getPortalService().repairNear(player);}},10L);
     }
 
@@ -54,7 +54,7 @@ public final class GameplayListener implements Listener {
     public void onChangedWorld(PlayerChangedWorldEvent event) {
         Player player=event.getPlayer();
         org.bukkit.Bukkit.getScheduler().runTaskLater(plugin,
-           () -> { if(player.isOnline()){plugin.getShowcaseService().repairNear(player);
+           () -> { if(player.isOnline()){plugin.getShowcaseService().resolveWorld(player.getWorld()); plugin.getShowcaseService().repairNear(player);
                 plugin.getPortalService().repairNear(player);} },10L);
     }
 
@@ -63,7 +63,7 @@ public final class GameplayListener implements Listener {
         if(event.getTo()==null) return;
         Player player=event.getPlayer();
         org.bukkit.Bukkit.getScheduler().runTaskLater(plugin,
-            () -> { if(player.isOnline()){plugin.getShowcaseService().repairNear(player);
+            () -> { if(player.isOnline()){plugin.getShowcaseService().resolveWorld(player.getWorld()); plugin.getShowcaseService().repairNear(player);
                 plugin.getPortalService().repairNear(player);} },12L);
     }
 
@@ -71,7 +71,7 @@ public final class GameplayListener implements Listener {
     public void onChunkLoad(ChunkLoadEvent event) {
         org.bukkit.Chunk chunk=event.getChunk();
         org.bukkit.Bukkit.getScheduler().runTaskLater(plugin,
-            () -> {if(chunk.isLoaded()){plugin.getShowcaseService().repairChunk(chunk);
+            () -> {if(chunk.isLoaded()){plugin.getShowcaseService().resolveWorld(chunk.getWorld()); plugin.getShowcaseService().repairChunk(chunk);
                 plugin.getPortalService().repairChunk(chunk);}},5L);
     }
 
@@ -103,11 +103,13 @@ public final class GameplayListener implements Listener {
         if (plugin.getConfig().getBoolean("challenge.count-natural-breaks", true)) plugin.addProgress(player, 1);
     }
 
-    @EventHandler(ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
     public void onInteract(PlayerInteractEvent event) {
         if (!event.getAction().isRightClick()) return;
         if (event.getHand() != EquipmentSlot.HAND) return;
         Player player = event.getPlayer();
+        // Diagnostic records interactions even when another plugin cancels the event.
+        plugin.getDestructionService().recordInteraction(player,event.getAction().name(),event.isCancelled());
         if (plugin.getItemFactory().isTravelPortal(event.getItem())) {
             event.setCancelled(true);
             if(event.getClickedBlock()!=null) plugin.getPortalService().place(player,event.getClickedBlock());
@@ -123,7 +125,7 @@ public final class GameplayListener implements Listener {
             return;
         }
         if (id == ToolId.LASER) {
-            // Cancelling the use packet prevents a continuous-use item from entering its held state.
+            // Do not cancel consumption; the client must enter the held-item state.
             event.setUseInteractedBlock(Result.DENY);
             event.setUseItemInHand(Result.ALLOW);
             plugin.getDestructionService().startLaser(player);

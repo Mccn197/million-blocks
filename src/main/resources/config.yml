@@ -15,7 +15,8 @@ locations:
     yaw: 0.0
     pitch: 0.0
   reward-room:
-    enabled: true
+    # Legacy V0.6 setting, superseded by reward-world (no longer used at victory).
+    enabled: false
     world: mining_spawn
     x: 0.5
     y: 82.0
@@ -195,3 +196,9 @@ weapons:
     max-blocks: 200000
   mass-blocks-per-tick: 1200
   max-concurrent-mass-jobs: 2
+
+# V0.7.1 — Dedicated, destructible end-of-challenge material showroom.
+# Never points to mining_sky, mining_spawn, the VOD survival or another existing world.
+reward-world:
+  enabled: true
+  name: reward_destructions

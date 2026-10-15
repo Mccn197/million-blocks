@@ -8,7 +8,7 @@ import java.util.*;
 public final class MillionBlocksCommand implements TabExecutor {
     private final MillionBlocksPlugin plugin;
     public MillionBlocksCommand(MillionBlocksPlugin plugin){this.plugin=plugin;}
-    private static final List<String> ROOT=List.of("help","info","laser","weapon","progress","give","world","survival","hub","portal","hud","showcase","victory","arena","reload");
+    private static final List<String> ROOT=List.of("help","info","laser","weapon","progress","give","world","survival","hub","portal","hud","showcase","victory","arena","reward","reload");
     @Override public boolean onCommand(CommandSender sender,Command command,String alias,String[] args){
         if(!(sender instanceof Player p)){sender.sendMessage("Use /mb from an in-game OP account.");return true;}
         try{
@@ -28,12 +28,34 @@ public final class MillionBlocksCommand implements TabExecutor {
                 case "weapon" -> weapon(p,args);
                 case "showcase" -> showcase(p,args);
                 case "victory" -> plugin.triggerVictory(p,true);
+                case "reward" -> reward(p,args);
                 case "arena" -> {require(args,2,"/mb arena reset");int blocks=plugin.getArenaService().reset();p.sendMessage("§aArena reset: "+blocks);}
                 case "reload" -> reload(p,args);
                 default -> help(p);
             }
         }catch(Exception ex){p.sendMessage("§cErreur: "+ex.getMessage());plugin.getLogger().warning("/mb error: "+ex);}
         return true;
+    }
+    private void reward(Player p,String[] a){
+        RewardDestructionsService reward=plugin.getRewardService();
+        String op=a.length>=2?a[1].toLowerCase(Locale.ROOT):"status";
+        switch(op){
+            case "status" ->p.sendMessage(reward.status());
+            case "list" ->p.sendMessage("§eReward materials: "+String.join(", ",reward.materialIds()));
+            case "prepare" ->{
+                reward.prepare();
+                p.sendMessage("§aPréparation lancée. "+reward.status());
+            }
+            case "tp" -> reward.teleport(p);
+            case "reset" ->{
+                require(a,4,"/mb reward reset <all|stone|diamond|...> confirm");
+                if(!a[3].equalsIgnoreCase("confirm"))
+                    throw new IllegalArgumentException("Ajoute 'confirm' pour reconstruire les plots.");
+                reward.reset(a[2].toLowerCase(Locale.ROOT));
+                p.sendMessage("§aReconstruction lancée: "+a[2]+". "+reward.status());
+            }
+            default ->throw new IllegalArgumentException("status|list|prepare|tp|reset <material> confirm");
+        }
     }
     private void progress(Player p,String[] a){
         String sub=a.length>=2?a[1]:"get";
@@ -238,6 +260,7 @@ public final class MillionBlocksCommand implements TabExecutor {
         p.sendMessage("§e/mb showcase size nearest|sc-001|all 5 §7— modèles géants");
         p.sendMessage("§e/mb world mining|survival §7/ §e/mb reload all");
         p.sendMessage("§e/mb survival prepare|status|use new|use old §7— nouvelle seed sans effacer l'ancienne");
+        p.sendMessage("§e/mb reward prepare|tp|list|status|reset all confirm §7— musée destructible");
     }
     @Override public List<String> onTabComplete(CommandSender sender,Command command,String label,String[] a){
         if(a.length==1)return filter(ROOT,a[0]);String root=a[0].toLowerCase(Locale.ROOT);
@@ -246,7 +269,7 @@ public final class MillionBlocksCommand implements TabExecutor {
             case "hub"->List.of("lock","edit","sky","island","schem","spawn");case "portal"->List.of("give","refresh","inspect","list","remove","exit","reload");case "weapon"->List.of("debug","test");
             case "hud"->List.of("mode","show","hide","toggle","pack","multiplier","reload","refresh","debug");
             case "showcase"->List.of("line","circle","place","move","size","remove","clear","list","save","reload","respawn","repair","diagnose");
-            case "arena"->List.of("reset");case "reload"->List.of("all","config","showcases","portals","hud");default->List.of();},a[1]);
+            case "arena"->List.of("reset");case "reward"->List.of("status","list","prepare","tp","reset");case "reload"->List.of("all","config","showcases","portals","hud");default->List.of();},a[1]);
         if(a.length==3){return filter(switch(root){
             case "hub"-> switch(a[1]){case "lock"->List.of("on","off","toggle","status");case "edit"->List.of("on","off");case "sky"->List.of("create");case "island"->List.of("create");case "schem"->List.of("info","paste","cancel");case "spawn"->List.of("set");default->List.of();};
             case "portal"->switch(a[1]){case "remove"->List.of("nearest","all");case "exit"->List.of("create");default->List.of();};
@@ -255,9 +278,11 @@ public final class MillionBlocksCommand implements TabExecutor {
                 List<String> l=new ArrayList<>(List.of("nearest","all"));l.addAll(plugin.getShowcaseService().ids());yield l;
             }case "move"-> {List<String> l=new ArrayList<>(List.of("nearest"));l.addAll(plugin.getShowcaseService().ids());yield l;}case "circle"->List.of("6","8","10","12");case "line"->List.of("2","3","4");default->List.of();};
             case "laser"->List.of("on","off");case "weapon"->a[1].equals("test")?tools():List.of();
+            case "reward"->a[1].equals("reset")?new ArrayList<>() {{add("all");addAll(plugin.getRewardService().materialIds());}}:List.of();
             case "world"->a[1].equals("set")?List.of("hub","survival"):List.of();
             case "survival"->List.of("new","old");case "give"->tools();case "progress"->List.of("1000","325000","800000","990000","1000000");default->List.of();},a[2]);}
         if(a.length==4){if(root.equals("world")&&a[1].equals("set"))return filter(List.of("here"),a[3]);
+            if(root.equals("reward")&&a[1].equals("reset"))return filter(List.of("confirm"),a[3]);
             if(root.equals("showcase")&&a[1].equals("size"))return filter(List.of("0.5","1","2","3","5","8","12"),a[3]);
             if(root.equals("hub")&&a[1].equals("schem")&&a[2].equals("paste"))return filter(List.of("confirm"),a[3]);
             if(root.equals("hub")&&a[1].equals("island"))return filter(List.of("55","60","70","90"),a[3]);

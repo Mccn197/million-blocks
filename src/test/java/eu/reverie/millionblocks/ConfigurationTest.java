@@ -17,7 +17,7 @@ class ConfigurationTest {
     @Test void pluginDescriptorDeclaresOptionalPaperIntegration() throws Exception {
         var config=new YamlConfiguration();
         config.loadFromString(Files.readString(Path.of("src/main/resources/plugin.yml")));
-        assertEquals("26.2",config.getString("api-version"));assertEquals("0.7.0",config.getString("version"));
+        assertEquals("26.2",config.getString("api-version"));assertEquals("0.7.1",config.getString("version"));
         assertEquals(java.util.List.of("BetterHud"),config.getStringList("softdepend"));
     }
     @Test void everyPlayableItemMapsToAnExistingModernItemDefinition() throws Exception {

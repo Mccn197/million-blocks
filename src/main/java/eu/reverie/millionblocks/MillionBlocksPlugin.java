@@ -23,6 +23,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     private HudService hudService;
     private RemoteAimService aimService;
     private UnlockService unlockService;
+    private RewardDestructionsService rewardService;
     private ShowcaseService showcaseService;
     private PortalService portalService;
     private SchematicService schematicService;
@@ -41,6 +42,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         this.worldService = new WorldService(this);
         this.aimService = new RemoteAimService(this);
         this.unlockService = new UnlockService(this);
+        this.rewardService = new RewardDestructionsService(this);
         this.hudService = new HudService(this);
         this.showcaseService = new ShowcaseService(this);
         this.portalService = new PortalService(this);
@@ -70,6 +72,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         if (showcaseService != null) showcaseService.shutdown();
         if (portalService != null) portalService.shutdown();
         if (schematicService != null) schematicService.cancel();
+        if (rewardService != null) rewardService.shutdown();
         if (progressService != null) progressService.save();
     }
 
@@ -86,6 +89,8 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     }
 
     public void addProgress(Player player, long amount) {
+        // Reward world is a weapons sandbox; destroying its exhibits never advances the main challenge.
+        if (rewardService != null && rewardService.isReward(player.getWorld())) return;
         long before = progressService.get(player);
         long after = progressService.set(player, HudState.addSaturated(before, amount, hudService.multiplier()));
         if (amount > 0 && hudService != null) hudService.mined(player);
@@ -126,9 +131,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
         );
         long delay = getConfig().getLong("victory.teleport-delay-ticks", 60L);
         getServer().getScheduler().runTaskLater(this, () -> {
-            java.util.Optional<Location> configured = configuredLocation("locations.reward-room");
-            if (configured.isPresent()) player.teleport(configured.get());
-            else if (worldService != null) worldService.teleportReward(player);
+            if(player.isOnline() && rewardService != null) rewardService.teleport(player);
         }, Math.max(0L, delay));
     }
 
@@ -185,6 +188,7 @@ public final class MillionBlocksPlugin extends JavaPlugin {
     public WorldService getWorldService() { return worldService; }
     public RemoteAimService getAimService() { return aimService; }
     public UnlockService getUnlockService() { return unlockService; }
+    public RewardDestructionsService getRewardService() { return rewardService; }
     public HudService getHudService() { return hudService; }
     public ShowcaseService getShowcaseService() { return showcaseService; }
     public PortalService getPortalService() { return portalService; }

@@ -164,27 +164,32 @@ hub:
 
 # V0.5 - cinematic remote weapons. Tune here without rebuilding the plugin.
 weapons:
+  raycast:
+    max-chunks: 24
   laser:
-    range: 145
+    range: 220
     width: 5
     tick-interval: 2
     max-blocks-per-pulse: 350
   tnt:
+    range: 170
+    impact-ticks: 22
+    radius: 7
     fuse-ticks: 55
     velocity: 2.8
   creeper:
-    range: 65
+    range: 170
     radius: 5
     blocks-per-tick: 800
   drill:
-    range: 45
+    range: 120
   meteor:
-    range: 130
+    range: 210
     radius: 14
     charge-ticks: 35
     max-blocks: 20000
   world-eater:
-    range: 155
+    range: 240
     radius: 34
     charge-ticks: 60
     max-blocks: 200000

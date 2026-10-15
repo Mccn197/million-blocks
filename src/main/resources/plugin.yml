@@ -1,5 +1,5 @@
 name: MillionBlocks
-version: 0.6.0
+version: 0.7.0
 main: eu.reverie.millionblocks.MillionBlocksPlugin
 api-version: '26.2'
 authors: [Reverie]

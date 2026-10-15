@@ -116,7 +116,10 @@ public final class HudService {
         boolean showGoal=plugin.getConfig().getBoolean("hud.show-goal",true);
         boolean showPercent=plugin.getConfig().getBoolean("hud.show-percent",true);
         boolean showMult=plugin.getConfig().getBoolean("hud.show-multiplier",true);
-        snapshots.put(p.getUniqueId(),new HudState(current,goal,mult,true,showGoal,showPercent,showMult,icon,minedAt.getOrDefault(p.getUniqueId(),0L)));
+        UnlockService.Stage stage=plugin.getUnlockService().next(current);
+        snapshots.put(p.getUniqueId(),new HudState(current,goal,mult,true,showGoal,showPercent,showMult,icon,
+            minedAt.getOrDefault(p.getUniqueId(),0L),stage.id(),stage.itemText(),stage.currentStage(),
+            stage.stageSize(),stage.percentage()));
         boolean amber = bridge.sync(p,m.equals("betterhud"));
         if(m.equals("betterhud") && amber) {
             BossBar old=bars.remove(p.getUniqueId()); if(old!=null)old.removeAll();

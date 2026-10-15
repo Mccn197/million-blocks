@@ -82,8 +82,9 @@ public final class WorldService {
 
     public void selectHubHere(Player player) {
         World here=player.getWorld();
-        if(here.getName().equalsIgnoreCase(survivalName()))
-            throw new IllegalArgumentException("Le hub ne peut pas être la Survival active.");
+        if(here.getName().equalsIgnoreCase(survivalName()) ||
+            here.getName().equalsIgnoreCase(plugin.getRewardService().worldName()))
+            throw new IllegalArgumentException("Le hub doit être distinct de la Survival et du monde récompense.");
         // Select the existing world; never generate, paste or move any world data.
         plugin.getConfig().set("world-system.mining-spawn.name",here.getName());
         plugin.getConfig().set("hub.sky-world-name",here.getName());
@@ -100,7 +101,8 @@ public final class WorldService {
     }
     public void selectSurvivalHere(Player player) {
         World here=player.getWorld();
-        if(isHub(here)||here.getName().equalsIgnoreCase("mining_spawn")||here.getName().equalsIgnoreCase("mining_sky"))
+        if(isHub(here)||here.getName().equalsIgnoreCase("mining_spawn")||here.getName().equalsIgnoreCase("mining_sky")
+             ||plugin.getRewardService().isReward(here))
             throw new IllegalArgumentException("Ce monde est un hub ; impossible de le choisir comme Survival.");
         plugin.getConfig().set("world-system.survival.name",here.getName());
         plugin.saveConfig();
